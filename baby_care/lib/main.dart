@@ -1,4 +1,6 @@
+// @dart=2.9
 import 'package:baby_care/config.dart';
+import 'package:baby_care/doctor_profile.dart';
 import 'package:baby_care/sign_in_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,7 +19,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,22 +27,25 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home:
 
-        // SplashScreen(
-        //   seconds: 20,
-        //   navigateAfterSeconds:Text('haaaaaaaaaaaaaa'),
-        //   title: new Text(
-        //     'SplashScreen Example',
-        //     style: new TextStyle(
-        //         fontWeight: FontWeight.bold,
-        //         fontSize: 20.0,
-        //         color: Colors.white),
-        //   ),
-        //
-        //   backgroundColor: Colors.lightBlue[200],
-        // )
-        SplashPage()
-    );
-  }
+            // SplashScreen(
+            //   seconds: 20,
+            //   navigateAfterSeconds:Text('haaaaaaaaaaaaaa'),
+            //   title: new Text(
+            //     'SplashScreen Example',
+            //     style: new TextStyle(
+            //         fontWeight: FontWeight.bold,
+            //         fontSize: 20.0,
+            //         color: Colors.white),
+            //   ),
+            //
+            //   backgroundColor: Colors.lightBlue[200],
+            // )
+
+
+
+            //SplashPage());
+            DoctorProfile()
+ ); }
 }
         // Scaffold(
         //   body: Container(
