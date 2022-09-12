@@ -26,7 +26,7 @@ class Schedule extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      width: 140,
+      width: 180,
       child: Column(
         children: [
           MyText(
@@ -34,10 +34,13 @@ class Schedule extends StatelessWidget {
               font: arabicFont400,
               size: 20,
               color: pointEightFiveWhiteColor),
+          SizedBox(
+            height: 10,
+          ),
           MyText(
               data: time,
               font: arabicFont400,
-              size: 15,
+              size: 20,
               color: pointEightFiveWhiteColor)
         ],
       ),

@@ -40,7 +40,8 @@ final Color pointEightFiveWhiteColor = Colors.white.withOpacity(0.85);
 //selected Category Background, selected filter Background, Shopping basket background
 //rate title, sub rate product title, rate number, call icon background
 //list page options background, increase and decrease product background,
-final Color pointOEightWhiteColor = Colors.white.withOpacity(0.08); // final Color oneFourColor = Color(0xff141414);
+final Color pointOEightWhiteColor = Colors.white
+    .withOpacity(0.08); // final Color oneFourColor = Color(0xff141414);
 //selected star 2,
 const Color orangeColor = Color(0xffFF701F);
 //add to basket background, appointment booking background, make order background
@@ -50,4 +51,5 @@ final Color blueColor = Color(0xff1F83F8).withOpacity(0.98);
 final Color pointNineWhiteColor = Colors.white.withOpacity(0.9);
 //bar chart,
 final Color pointFifteenWhiteColor = Colors.white.withOpacity(0.15);
+final Color lightBlue = Color.fromRGBO(31, 131, 248, 0.98);
 //--------------------------------------------------------------------------------------------------

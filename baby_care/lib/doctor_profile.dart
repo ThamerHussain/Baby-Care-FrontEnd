@@ -49,6 +49,9 @@ class _DoctorProfileState extends State<DoctorProfile> {
                   ],
                 ),
               ),
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -91,13 +94,16 @@ class _DoctorProfileState extends State<DoctorProfile> {
                   ),
                 ],
               ),
-              Container(
-                color: Colors.amber,
-                child: DiscreptionContainer(
-                    title: 'السيرة الذاتية',
-                    text: '''بكلوريوس طب عام من جامعة بغداد كلية الطب
+              SizedBox(
+                height: 20,
+              ),
+              DiscreptionContainer(
+                  title: 'السيرة الذاتية',
+                  text: '''بكلوريوس طب عام من جامعة بغداد كلية الطب
 تخصص الرعاية الصحية للأطفال من جامعة ميونخ
 بورد الرعاية الصحية للأطفال من جامعة كامبريدج...'''),
+              SizedBox(
+                height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -107,7 +113,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 20),
+                        padding: const EdgeInsets.only(right: 30),
                         child: MyText(
                             data: 'أوقات دوام العيادة',
                             font: arabicFont400,
@@ -121,38 +127,50 @@ class _DoctorProfileState extends State<DoctorProfile> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Column(
+                            children: [
+                              Schedule(
+                                  day: 'الاحد',
+                                  time: 'من 8 صباحاً الى 8 مساءاً'),
+                              Schedule(
+                                  day: 'الثلاثاء',
+                                  time: 'من 8 صباحاً الى 8 مساءاً'),
+                              Schedule(
+                                  day: 'الخميس',
+                                  time: 'من 8 صباحاً الى 8 مساءاً'),
+                            ],
+                          ),
+                          Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Schedule(
                                   day: 'الاثنين',
-                                  time: 'الساعة 8 صباحاً - 8 مساءاً'),
+                                  time: 'من 8 صباحاً الى 8 مساءاً'),
                               Schedule(
                                   day: 'الاربعاء',
-                                  time: 'الساعة 8 صباحاً - 8 مساءاً'),
+                                  time: 'من 8 صباحاً الى 8 مساءاً'),
                               Schedule(
                                   day: 'السبت',
-                                  time: 'الساعة 8 صباحاً - 8 مساءاً'),
+                                  time: 'من 8 صباحاً الى 8 مساءاً'),
                             ],
                           ),
-                          Column(
-                            children: [
-                              Schedule(
-                                  day: 'الاحد',
-                                  time: 'الساعة 8 صباحاً - 8 مساءاً'),
-                              Schedule(
-                                  day: 'الثلاثاء',
-                                  time: 'الساعة 8 صباحاً - 8 مساءاً'),
-                              Schedule(
-                                  day: 'الخميس',
-                                  time: 'الساعة 8 صباحاً - 8 مساءاً'),
-                            ],
-                          )
                         ],
                       )
                     ],
                   ),
                 ),
               ),
+              FlatButton(
+                onPressed: () {},
+                color: lightBlue,
+                height: 50,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                child: MyText(
+                    data: " حجز موعد ",
+                    color: whiteColor,
+                    font: arabicFont400,
+                    size: 25),
+              )
             ],
           ),
         ),

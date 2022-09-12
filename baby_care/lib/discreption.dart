@@ -63,7 +63,7 @@ class _DiscreptionContainerState extends State<DiscreptionContainer> {
                           data: widget.title,
                           font: arabicFont400,
                           size: 25,
-                          color: Colors.blue)
+                          color: whiteColor)
                     ],
                   ),
                   SizedBox(
@@ -72,7 +72,7 @@ class _DiscreptionContainerState extends State<DiscreptionContainer> {
                   Text(
                     flage ? firstHalf : widget.text,
                     style: TextStyle(
-                        color: Colors.blue,
+                        color: pointEightFiveWhiteColor,
                         fontSize: 17,
                         fontFamily: arabicFont400),
                     textDirection: TextDirection.rtl,
