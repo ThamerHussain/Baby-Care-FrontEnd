@@ -65,6 +65,9 @@ class _DoctorProfileState extends State<DoctorProfile> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
+                                SizedBox(
+                                  height: 10,
+                                ),
                                 MyText(
                                     data: "د. محمد عبد الرسول",
                                     font: arabicFont700,
@@ -78,6 +81,9 @@ class _DoctorProfileState extends State<DoctorProfile> {
                                     font: arabicFont400,
                                     size: 23,
                                     color: pointEightFiveWhiteColor),
+                                SizedBox(
+                                  height: 20,
+                                ),
                                 MyText(
                                     data: '8 صباحاً - 8 مساءاً',
                                     font: arabicFont400,
