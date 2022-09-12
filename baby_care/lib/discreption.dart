@@ -73,7 +73,7 @@ class _DiscreptionContainerState extends State<DiscreptionContainer> {
                     flage ? firstHalf : widget.text,
                     style: TextStyle(
                         color: pointEightFiveWhiteColor,
-                        fontSize: 20,
+                        fontSize: 15,
                         fontFamily: arabicFont400),
                     textDirection: TextDirection.rtl,
                   )

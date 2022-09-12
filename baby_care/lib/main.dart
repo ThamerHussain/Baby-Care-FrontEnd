@@ -41,7 +41,8 @@ class MyApp extends StatelessWidget {
             //   backgroundColor: Colors.lightBlue[200],
             // )
 
-            SplashPage());
+            // SplashPage());
+            DoctorProfile());
   }
 }
         // Scaffold(
