@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'schedule.dart';
 
 class DoctorProfile extends StatefulWidget {
   const DoctorProfile({super.key});
@@ -82,12 +83,12 @@ class _DoctorProfileState extends State<DoctorProfile> {
                                     size: 23,
                                     color: pointEightFiveWhiteColor),
                                 SizedBox(
-                                  height: 20,
+                                  height: 15,
                                 ),
                                 MyText(
                                     data: '8 صباحاً - 8 مساءاً',
                                     font: arabicFont400,
-                                    size: 20,
+                                    size: 15,
                                     color: pointEightFiveWhiteColor),
                                 SizedBox(
                                   height: 5,
@@ -107,7 +108,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                           child: DiscreptionContainer(
                               title: "السيرة الذاتية",
                               text:
-                                  'والله والله والله وانت مامحلفني هذا التيشيرت الا يخبل خاماية غير تركي ماركة فول ليكرا تشك شك شنو ثلج  بالصيف ونار بالشتا ولاعبالك ب3 وونص اخذهة وبيهة ضمان شهرين لا تنشك ولا تنفتك غير اصلية مال عمك اخذهة وخل ابنك يتهنة'))),
+                                  '''بكلوريوس طب عام من جامعة بغداد كلية الطب تخصص الرعاية الصحية للأطفال من جامعة ميونخ بورد الرعاية الصحية للأطفال من جامعة كامبريدج...'''))),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Column(
@@ -183,38 +184,6 @@ class _DoctorProfileState extends State<DoctorProfile> {
                 ]),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class Schedule extends StatelessWidget {
-  const Schedule({
-    super.key,
-    required this.day,
-    required this.time,
-  });
-
-  final String time, day;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 60,
-      width: 120,
-      child: Column(
-        children: [
-          MyText(
-              data: day,
-              font: arabicFont400,
-              size: 20,
-              color: pointEightFiveWhiteColor),
-          MyText(
-              data: time,
-              font: arabicFont400,
-              size: 15,
-              color: pointEightFiveWhiteColor)
-        ],
       ),
     );
   }

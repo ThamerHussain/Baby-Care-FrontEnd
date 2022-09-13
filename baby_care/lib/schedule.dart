@@ -14,8 +14,8 @@ class Schedule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
-      width: 180,
+      height: 60,
+      width: 120,
       child: Column(
         children: [
           MyText(
@@ -23,13 +23,10 @@ class Schedule extends StatelessWidget {
               font: arabicFont400,
               size: 20,
               color: pointEightFiveWhiteColor),
-          SizedBox(
-            height: 10,
-          ),
           MyText(
               data: time,
               font: arabicFont400,
-              size: 20,
+              size: 15,
               color: pointEightFiveWhiteColor)
         ],
       ),
