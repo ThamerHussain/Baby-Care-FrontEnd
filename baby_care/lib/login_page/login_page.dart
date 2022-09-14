@@ -1,5 +1,6 @@
 
-import 'package:baby_care/config/config.dart';
+
+import 'package:baby_care/config.dart';
 import 'package:baby_care/models/models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -31,16 +32,16 @@ class _RegisterPageState extends State<RegisterPage> {
                     children: [
                       MyText(
                           data: "لدي حساب",
-                          font: arabicFont,
+                          font: arabicFont400,
                           size: 22,
-                          color: primeryColor,
+                          color: whiteColor,
                           weight: FontWeight.w600),
                       Spacer(),
                       MyText(
                           data: "Baby Care",
-                          font:englishFont,
+                          font:englishFontMedium,
                           size: 30,
-                          color: primeryColor,
+                          color: whiteColor,
                           weight: FontWeight.w600),
                     ],
                   ),
@@ -50,9 +51,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   MyText(
                       data: '''يرجى إدخال معلومات
                     التسجيل''',
-                      font:arabicFont,
+                      font:arabicFont400,
                       size: 25,
-                      color:primeryColor,
+                      color:whiteColor,
                       weight: FontWeight.w500),
                   SizedBox(
                     height: 30,
@@ -87,13 +88,13 @@ class _RegisterPageState extends State<RegisterPage> {
                           height: 50,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
-                              color: primeryColor),
+                              color: blackColor),
                           child: Center(
                               child: MyText(
                             data: "انشاء حساب",
-                            font:arabicFont,
+                            font:arabicFont400,
                             size: 20,
-                            color: fontSplashColor,
+                            color: whiteColor,
                             weight: FontWeight.w600,
                           )),
                         ))),

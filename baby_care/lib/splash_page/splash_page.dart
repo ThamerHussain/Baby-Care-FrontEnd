@@ -1,16 +1,17 @@
 import 'dart:async';
 
-import 'package:baby_care/config/config.dart';
+import 'package:baby_care/config.dart';
+
 import 'package:baby_care/login_page/login_page.dart';
 import 'package:baby_care/models/models.dart';
 import 'package:baby_care/models/models.dart';
-import 'package:baby_care/config/config.dart';
+
 import 'package:baby_care/login_page/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:baby_care/config/config.dart';
+
 
 class Spalsh extends StatefulWidget {
   const Spalsh({super.key});
@@ -32,7 +33,7 @@ class _SpalshState extends State<Spalsh> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primeryColor,
+      backgroundColor: blackColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 55),
         child: Container(
@@ -41,9 +42,9 @@ class _SpalshState extends State<Spalsh> {
             MyIconApp(),
             MyText(
               data: "Baby Care",
-              font: englishFont,
+              font: englishFontMedium,
               size: 40,
-              color: fontSplashColor,
+              color: blackColor,
               weight: FontWeight.bold,
             ),
             
@@ -52,9 +53,9 @@ class _SpalshState extends State<Spalsh> {
             ),
             MyText(
               data: "تطبيق يلبي جميع احتياجات طفلك",
-              font: arabicFont,
+              font: arabicFont400,
               size: 18,
-              color: fonthintColor,
+              color: whiteColor,
               weight: FontWeight.w400,
             )
           ],

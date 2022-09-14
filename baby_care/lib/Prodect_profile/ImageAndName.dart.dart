@@ -6,8 +6,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class profilProdectPart2 extends StatelessWidget {
-  const profilProdectPart2({super.key});
-
+  const profilProdectPart2({super.key,required this.imageFromUser});
+final String imageFromUser;
  
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class profilProdectPart2 extends StatelessWidget {
                           )
                         ],
                       )),
-                  ImageProdectProfil()
+                  ImageProdectProfil(image: imageFromUser,)
                 ],
               ),
             );

@@ -1,4 +1,5 @@
-import 'package:baby_care/config/config.dart';
+
+import 'package:baby_care/config.dart';
 import 'package:baby_care/models/models.dart';
 import 'package:baby_care/models/models.dart';
 import 'package:flutter/material.dart';
@@ -30,9 +31,9 @@ class _SigninPageState extends State<SigninPage> {
                       Spacer(),
                       MyText(
                           data: "Baby Care",
-                          font: englishFont,
+                          font: englishFontBold,
                           size: 30,
-                          color: primeryColor,
+                          color: whiteColor,
                           weight: FontWeight.w600),
                     ],
                   ),
@@ -42,9 +43,9 @@ class _SigninPageState extends State<SigninPage> {
                   MyText(
                       data: '''يرجى إدخال معلومات
                     التسجيل''',
-                      font: arabicFont,
+                      font: arabicFont400,
                       size: 25,
-                      color: primeryColor,
+                      color: whiteColor,
                       weight: FontWeight.w500),
                   SizedBox(
                     height: 60,
@@ -61,9 +62,9 @@ class _SigninPageState extends State<SigninPage> {
                     children: [
                       MyText(
                           data: "إنشاء حساب",
-                          font: arabicFont,
+                          font: arabicFont400,
                           size: 20,
-                          color: primeryColor,
+                          color: whiteColor,
                           weight: FontWeight.w500)
                     ],
                   ),
@@ -82,13 +83,13 @@ class _SigninPageState extends State<SigninPage> {
                               height: 50,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                  color: primeryColor),
+                                  color: blackColor),
                               child: Center(
                                   child: MyText(
                                 data: "تسجيل دخول",
-                                font: arabicFont,
+                                font: arabicFont400,
                                 size: 20,
-                                color: fontSplashColor,
+                                color: whiteColor,
                                 weight: FontWeight.w600,
                               )),
                             ))),

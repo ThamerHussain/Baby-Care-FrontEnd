@@ -41,14 +41,14 @@ class MyStar extends StatelessWidget {
 
 
 class ImageProdectProfil extends StatelessWidget {
-  const ImageProdectProfil({super.key});
-
+  const ImageProdectProfil({super.key,required this.image});
+final String image; 
   @override
   Widget build(BuildContext context) {
     return  ClipRRect(
                       borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
-                        'assets/images/shirt2.jpeg',
+                        image,
                         width: 160,
                         height: 160,
                       ));

@@ -19,7 +19,7 @@ class MyText extends StatelessWidget {
             fontSize:size,
             // fontWeight: weight,
             fontFamily:font,
-            color: color));
+            color: color),textDirection:TextDirection.rtl);
   }
 }
 

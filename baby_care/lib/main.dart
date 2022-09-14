@@ -1,9 +1,13 @@
 // @dart=2.9
 import 'package:baby_care/Prodect_profile/prodect_profil..dart';
+import 'package:baby_care/doctor_profile/dovtor_profile.dart';
 import 'package:baby_care/reviews.dart';
 import 'package:baby_care/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:get/get_navigation/src/routes/transitions_type.dart';
 import 'sign_up_page.dart';
 
 void main() {
@@ -21,9 +25,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        home:
+        home: ProdectProfil(),
 
         // SplashScreen(
         //   seconds: 20,
@@ -37,8 +41,13 @@ class MyApp extends StatelessWidget {
         //   ),
         //
         //   backgroundColor: Colors.lightBlue[200],
+  
+ 
+  
+
+    // GetMaterialApp
         // )
-        ProdectProfil()
+        
     );
   }
 }

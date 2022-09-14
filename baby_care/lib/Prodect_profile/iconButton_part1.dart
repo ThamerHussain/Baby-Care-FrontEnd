@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 
 class iconButtonProdectPart1 extends StatefulWidget {
   const iconButtonProdectPart1({super.key});
@@ -12,23 +14,24 @@ class iconButtonProdectPart1 extends StatefulWidget {
 }
 
 class _iconButtonProdectPart1State extends State<iconButtonProdectPart1> {
-  bool flageFavorite =true;
+  RxBool flageFavorite =true.obs;
   @override
   Widget build(BuildContext context) {
     return  Padding(
       padding: const EdgeInsets.only(top: 20),
       child: Row(
                   children: [
-                    IconButton(
-                        onPressed: () {flageFavorite=!flageFavorite;
-                        setState(() {
-                          
-                        });},
-                       icon:flageFavorite? Icon(
-                                  Icons.favorite_border,
-                                  size: 35,
-                                  color: whiteColor,
-                                ):Icon(Icons.favorite,size: 35,color: whiteColor,)),
+                    Obx( () {
+                        return IconButton(
+                            onPressed: () {flageFavorite.value=!flageFavorite.value;
+                            },
+                           icon:flageFavorite.value? Icon(
+                                      Icons.favorite_border,
+                                      size: 35,
+                                      color: whiteColor,
+                                    ):Icon(Icons.favorite,size: 35,color: whiteColor,));
+                      }
+                    ),
                     Spacer(),
                     IconButton(
                         onPressed: () {},

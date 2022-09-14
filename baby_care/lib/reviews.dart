@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class ReviewProdect extends StatefulWidget {
   const ReviewProdect({super.key});
@@ -55,10 +57,7 @@ class _ReviewProdectState extends State<ReviewProdect> {
                   ),
                   IconButton(
                       onPressed: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ProdectProfil()));
+                        Get.off(ProdectProfil());
                       },
                       icon: Icon(
                         Icons.arrow_forward_ios_rounded,
@@ -82,7 +81,7 @@ class _ReviewProdectState extends State<ReviewProdect> {
                          ],
                        ),
                        //widget return image of prodect
-                      ImageProdectProfil(),
+                      ImageProdectProfil(image: 'assets/images/shirt2.jpeg',),
                       
                     ],
                   ),

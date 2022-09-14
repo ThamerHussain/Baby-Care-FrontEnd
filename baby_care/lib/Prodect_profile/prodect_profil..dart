@@ -9,6 +9,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class ProdectProfil extends StatefulWidget {
   const ProdectProfil({super.key});
@@ -36,10 +38,10 @@ class _ProdectProfilState extends State<ProdectProfil> {
               SizedBox(
                 height: 40,
               ),
-            profilProdectPart2(),
+            profilProdectPart2(imageFromUser: 'assets/images/shirt2.jpeg',),
               Expanded(
                   child: SingleChildScrollView(
-                      child: DiscreptionContainer(
+                      child: DiscreptionContainer(discreptions:"الشرح",
                           text:
                               'والله والله والله وانت مامحلفني هذا التيشيرت الا يخبل خاماية غير تركي ماركة فول ليكرا تشك شك شنو ثلج  بالصيف ونار بالشتا ولاعبالك ب3 وونص اخذهة وبيهة ضمان شهرين لا تنشك ولا تنفتك غير اصلية مال عمك اخذهة وخل ابنك يتهنة'))),
               Padding(
@@ -49,11 +51,7 @@ class _ProdectProfilState extends State<ProdectProfil> {
                   children: [
                     IconButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ReviewProdect()),
-                          );
+                         Get.to(ReviewProdect());
                         },
                         icon: Icon(
                           Icons.arrow_back_ios,
