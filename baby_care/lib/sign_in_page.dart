@@ -1,24 +1,19 @@
-import 'package:baby_care/models/text_field.dart';
+import 'package:baby_care/services/text_field.dart';
+import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'config.dart';
-import 'models.dart';
+import 'services/used_fonts_and_colors.dart';
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({super.key});
+class SignInPage extends StatelessWidget {
+  SignInPage({Key? key}) : super(key: key);
 
-  @override
-  State<SignInPage> createState() => _SignInPageState();
-}
-
-class _SignInPageState extends State<SignInPage> {
   var signInEmailController = TextEditingController();
   var signInPasswordController = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
+  Scaffold build(BuildContext context) {
     return Scaffold(
       body: Container(
         color: blackColor,
@@ -40,7 +35,6 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ],
                 ),
-
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 50, 15, 50),
                   child: Row(
@@ -59,39 +53,15 @@ class _SignInPageState extends State<SignInPage> {
                               font: arabicFont400,
                               size: 30,
                               color: whiteColor),
-                          //cause when we use one text widget
-                          // to display the wrapped sentence,
-                          // it will not appear properly
                         ],
                       ),
                     ],
                   ),
                 ),
-
-                // SizedBox(height: 100),
-
                 tField(signInEmailController, 'البريد الألكتروني',
                     englishFontMedium, TextDirection.ltr),
                 tField(signInPasswordController, 'كلمة المرور',
                     englishFontMedium, TextDirection.ltr),
-
-                // defaultFormField(
-                //     controller: emailController,
-                //     hinttext: "ادخل بريدك الالكتروني",
-                //     labletext: "البريد الالكتروني"),
-                // defaultFormField(
-                //     controller: passwordController,
-                //     hinttext: "ادخل رمزك السري",
-                //     labletext: "الرمز  السري"),
-                // defaultFormField(
-                //     controller: nameController,
-                //     hinttext: "ادخل اسمك",
-                //     labletext: "الاسم"),
-                // defaultFormField(
-                //     controller: familyNameController,
-                //     hinttext: "ادخل الاسم",
-                //     labletext: "اسم العائلة"),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 90),
                   child: Row(
@@ -99,36 +69,29 @@ class _SignInPageState extends State<SignInPage> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 23),
-                        child:
-
-                        // MyText(
-                        //     data: "إنشاء حساب",
-                        //     font: arabicFont400,
-                        //     size: 25,
-                        //     color: whiteColor),
-                        TextButton(
+                        child: TextButton(
                             style: ButtonStyle(
-                              shape:
-                              MaterialStateProperty.all<BeveledRectangleBorder>(
+                              shape: MaterialStateProperty.all<
+                                      BeveledRectangleBorder>(
                                   BeveledRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  )),
+                                borderRadius: BorderRadius.circular(10),
+                              )),
                             ),
                             onPressed: (() {
                               Navigator.pushReplacement(
-                                  context, MaterialPageRoute(builder: (context) => SignUpPage()));
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SignUpPage()));
                             }),
                             child: MyText(
                                 data: "إنشاء حساب",
                                 font: arabicFont400,
                                 size: 25,
                                 color: whiteColor)),
-
                       ),
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
                   child: TextButton(

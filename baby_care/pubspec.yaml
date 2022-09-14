@@ -35,6 +35,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   splashscreen: ^1.3.5
+  flutter_rating_bar: ^4.0.1
+  get: ^4.6.5
+  dropdown_button2: ^1.8.0
 
 dev_dependencies:
   flutter_test:
@@ -79,23 +82,40 @@ flutter:
   fonts:
      - family: SamsungOneArabic_400
        fonts:
-         - asset: assets/fonts/SamsungOneArabic_400.ttf
+         - asset: assets/fonts/samsung_one_arabic_400.ttf
 
      - family: SamsungOneArabic_700
        fonts:
-         - asset: assets/fonts/SamsungOneArabic_700.ttf
+         - asset: assets/fonts/samsung_one_arabic_700.ttf
 
      - family: SamsungSans-Bold
        fonts:
-         - asset: assets/fonts/SamsungSans_Bold.ttf
+         - asset: assets/fonts/samsung_sans_bold.ttf
 
      - family: SamsungSans-Medium
        fonts:
-         - asset: assets/fonts/SamsungSans_Medium.ttf
+         - asset: assets/fonts/samsung_sans_medium.ttf
 
      - family: Material
        fonts:
          - asset: assets/fonts/baby_icon_of_dark_theme.ttf
+
+     - family: MM
+       fonts:
+         - asset: assets/fonts/buttom_icons.ttf
+
+     - family: Material2
+       fonts:
+         - asset: assets/fonts/search_icon.ttf
+
+     - family: Mcall
+       fonts:
+         - asset: assets/fonts/call_icon.ttf
+
+     - family: Mtri
+       fonts:
+         - asset: assets/fonts/tri_icons.ttf
+
 
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700

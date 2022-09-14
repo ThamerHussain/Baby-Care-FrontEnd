@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../config.dart';
+import 'used_fonts_and_colors.dart';
 
 Padding tField(controller, hint, fontFamily, textDirection) {
   return Padding(

@@ -11,17 +11,15 @@
 ///      fonts:
 ///       - asset: fonts/Material.ttf
 ///
-///
+/// 
 ///
 import 'package:flutter/widgets.dart';
 
-class splashIcon {
-  splashIcon._();
+class call {
+  call._();
 
-  static const _kFontFam = 'Material';
+  static const _kFontFam = 'Mcall';
   static const String? _kFontPkg = null;
 
-  static const IconData fluent_emoji_high_contrast_baby_angel = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
-
-

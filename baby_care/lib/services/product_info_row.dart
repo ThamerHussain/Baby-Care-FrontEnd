@@ -1,0 +1,88 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'filters_and_items_column.dart';
+import 'used_fonts_and_colors.dart';
+import 'my_text.dart';
+
+Padding productInfoRow(title, String price, imagePath) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 30),
+    child: Column(
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            TextButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<BeveledRectangleBorder>(
+                      BeveledRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )),
+                ),
+                onPressed: (() {}),
+                child: Container(
+                  width: 51,
+                  height: 20,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: pointOEightWhiteColor),
+                  child: Center(
+                      child: Icon(Icons.add_shopping_cart_outlined,
+                          color: pointNineWhiteColor, size: 15)),
+                )),
+            SizedBox(width: 80),
+            Column(
+              children: [
+                MyText(
+                    data: title,
+                    font: arabicFont700,
+                    size: 15,
+                    color: pointEightFiveWhiteColor),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 3),
+                  child: MyText(
+                      data: '$price IQD',
+                      font: arabicFont700,
+                      size: 15,
+                      color: pointEightFiveWhiteColor),
+                ),
+                RatingBar.builder(
+                  initialRating: 3,
+                  minRating: 1,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemSize: 20,
+                  itemPadding: EdgeInsets.symmetric(horizontal: 0.0),
+                  itemBuilder: (context, _) => Icon(
+                    Icons.star_rounded,
+                    color: pointEightFiveWhiteColor,
+                  ),
+                  unratedColor: pointThreeWhiteColor,
+                  onRatingUpdate: (rating) {
+                    print(rating);
+                  },
+                ),
+              ],
+            ),
+            SizedBox(width: 5),
+            SizedBox(
+              height: 64,
+              width: 64,
+              child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                  child: Image.asset(
+                    imagePath,
+                    width: 64,
+                    height: 64,
+                  )),
+            ),
+          ],
+        ),
+        SizedBox(height: 20),
+      ],
+    ),
+  );
+}
