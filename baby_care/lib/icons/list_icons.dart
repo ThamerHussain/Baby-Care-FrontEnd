@@ -11,17 +11,18 @@
 ///      fonts:
 ///       - asset: fonts/Material.ttf
 ///
-///
+/// 
 ///
 import 'package:flutter/widgets.dart';
 
-class splashIcon {
-  splashIcon._();
+class ls {
+  ls._();
 
-  static const _kFontFam = 'Material';
+  static const _kFontFam = 'Mtri';
   static const String? _kFontPkg = null;
 
-  static const IconData fluent_emoji_high_contrast_baby_angel = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData out = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData call_center = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData heart = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData cart = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
-
-

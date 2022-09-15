@@ -1,10 +1,12 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'used_fonts_and_colors.dart';
+
 class MyStar extends StatelessWidget {
-  const MyStar({super.key, required this.size});
+  MyStar({super.key, required this.size});
   final double size;
+  final Color color = orangeColor;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -12,23 +14,23 @@ class MyStar extends StatelessWidget {
         Icon(
           Icons.star_rate_rounded,
           size: size,
-          color: Colors.amber,
+          color: color,
         ),Icon(
           Icons.star_rate_rounded,
           size: size,
-          color: Colors.amber,
+          color: color,
         ),Icon(
           Icons.star_rate_rounded,
           size: size,
-          color: Colors.amber,
+          color: color,
         ),Icon(
           Icons.star_rate_rounded,
           size: size,
-          color: Colors.amber,
+          color: color,
         ),Icon(
           Icons.star_rate_rounded,
           size: size,
-          color: Colors.amber,
+          color: color,
         ),
       ],
     );
@@ -39,17 +41,17 @@ class MyStar extends StatelessWidget {
 
 
 
-class ImageProdectProfil extends StatelessWidget {
-  const ImageProdectProfil({super.key,required this.image});
-final String image; 
+class ImageProductProfile extends StatelessWidget {
+  const ImageProductProfile({super.key});
+
   @override
   Widget build(BuildContext context) {
     return  ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: Image.asset(
-                        image,
-                        width: 160,
-                        height: 160,
-                      ));
+        borderRadius: BorderRadius.circular(15),
+        child: Image.asset(
+          'assets/images/2.jpg',
+          width: 171,
+          height: 171,
+        ));
   }
 }

@@ -1,10 +1,8 @@
+import '';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'icons/material_icons.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-
-import 'services/used_fonts_and_colors.dart';
 
 class MyText extends StatelessWidget {
   const MyText(
@@ -13,11 +11,12 @@ class MyText extends StatelessWidget {
       required this.font,
       required this.size,
       required this.color,
-      required FontWeight weight});
+      required this.weight});
   final String data;
   final String font;
   final double size;
   final Color color;
+  final FontWeight weight;
 
   @override
   Widget build(BuildContext context) {
@@ -25,38 +24,23 @@ class MyText extends StatelessWidget {
         style: TextStyle(
             height: 1.2,
             fontSize: size,
-            // fontWeight: weight,
+            fontWeight: weight,
             fontFamily: font,
-            color: color),
-        textDirection: TextDirection.rtl);
+            color: color));
   }
 }
 
-class SplashIcon1 extends StatelessWidget {
-  const SplashIcon1({super.key});
+class MyIconApp extends StatelessWidget {
+  const MyIconApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
         child: Image.asset(
-      'assets/images/first_baby_img.png',
-      width: 70,
-      height: 70,
+      'images/newicon.png',
+      width: 300,
+      height: 300,
     ));
-  }
-}
-
-class SplashIcon2 extends StatelessWidget {
-  const SplashIcon2({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return 
-    Icon(
-      Icons.emoji_emotions,
-      size: 70,
-      color: whiteColor,
-    );
   }
 }
 

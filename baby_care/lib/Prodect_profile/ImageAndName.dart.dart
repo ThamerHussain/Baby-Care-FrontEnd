@@ -1,13 +1,15 @@
-import 'package:baby_care/Prodect_profile/models_profile.dart';
-import 'package:baby_care/config.dart';
-import 'package:baby_care/models.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../models.dart';
+import '../services/used_fonts_and_colors.dart';
+import 'models_profile.dart';
+
 class profilProdectPart2 extends StatelessWidget {
-  const profilProdectPart2({super.key,required this.imageFromUser});
-final String imageFromUser;
+  const profilProdectPart2({super.key,required this.imageFromUser, required this.tital, required this.pricee});
+final String imageFromUser,tital,pricee;
  
   @override
   Widget build(BuildContext context) {
@@ -26,18 +28,18 @@ final String imageFromUser;
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           MyText(
-                              data: "تيشيرت اليوم الاول",
+                              data: tital,
                               font: arabicFont700,
                               size: 23,
-                              color: whiteColor),
+                              color: whiteColor,weight: FontWeight.w400,),
                           SizedBox(
                             height: 30,
                           ),
-                          MyText(
-                              data: "3,500IQD",
+                            MyText(data: pricee,
                               font: englishFontMedium,
                               size: 23,
-                              color: whiteColor),
+                              color: whiteColor,
+                              weight: FontWeight.w400),
                           SizedBox(
                             height: 5,
                           ),

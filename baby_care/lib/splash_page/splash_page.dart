@@ -1,16 +1,14 @@
 import 'dart:async';
 
-import 'package:baby_care/config.dart';
 
-import 'package:baby_care/login_page/login_page.dart';
-import 'package:baby_care/models/models.dart';
-import 'package:baby_care/models/models.dart';
-
-import 'package:baby_care/login_page/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+
+import '../login_page/login_page.dart';
+import '../services/models.dart';
+import '../services/used_fonts_and_colors.dart';
 
 
 class Spalsh extends StatefulWidget {

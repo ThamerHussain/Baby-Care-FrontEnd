@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../config.dart';
+import 'used_fonts_and_colors.dart';
 
-Padding tField(controller, hint, fontFamily, textDirection) {
+Padding tField(controller, hint, fontFamily, textDirection,) {
   return Padding(
     padding: const EdgeInsets.all(15.0),
     child: TextField(
