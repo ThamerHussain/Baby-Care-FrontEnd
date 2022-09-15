@@ -1,22 +1,24 @@
-import 'services/used_fonts_and_colors.dart';
-import 'package:baby_care/discreption.dart';
-import 'package:baby_care/models.dart';
-import 'discreption.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:baby_care/services/description_container.dart';
+import 'package:baby_care/services/my_text.dart';
+import 'package:baby_care/services/products_data.dart';
+import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'schedule.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'doctor_info_row.dart';
+import 'services/schedule.dart';
 
-class DoctorProfile extends StatefulWidget {
-  const DoctorProfile({super.key});
+class DoctorProfilePage extends StatefulWidget {
+  const DoctorProfilePage({super.key});
 
   @override
-  State<DoctorProfile> createState() => _DoctorProfileState();
+  State<DoctorProfilePage> createState() => _DoctorProfilePageState();
 }
 
-class _DoctorProfileState extends State<DoctorProfile> {
+class _DoctorProfilePageState extends State<DoctorProfilePage> {
   var size, width, height;
+  final RxBool isNotFavorite = true.obs;
+
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
@@ -34,81 +36,47 @@ class _DoctorProfileState extends State<DoctorProfile> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.fromLTRB(3, 20, 3, 0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
-                          onPressed: (() {}),
-                          icon: Icon(Icons.favorite_border),
-                          color: whiteColor,
-                          iconSize: 35,
+                          onPressed: () {
+                            isNotFavorite.value = !isNotFavorite.value;
+                          },
+                          icon: Obx(() {
+                            return isNotFavorite.value
+                                ? Icon(
+                              Icons.favorite_border,
+                              size: 30,
+                              color: whiteColor,
+                            )
+                                : Icon(
+                              Icons.favorite,
+                              size: 30,
+                              color: whiteColor,
+                            );
+                          }),
                         ),
+                        const Spacer(),
                         IconButton(
-                          onPressed: (() {}),
-                          icon: Icon(Icons.arrow_forward_ios),
-                          color: whiteColor,
-                          iconSize: 35,
-                        ),
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 30,
+                              color: whiteColor,
+                            ))
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Container(
-                            width: width * 0.4,
-                            height: height * 0.2,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                MyText(
-                                    data: "د. محمد عبد الرسول",
-                                    font: arabicFont700,
-                                    size: 22,
-                                    color: whiteColor),
-                                SizedBox(
-                                  height: 30,
-                                ),
-                                MyText(
-                                    data: "اخصائي اطفال",
-                                    font: arabicFont400,
-                                    size: 23,
-                                    color: pointEightFiveWhiteColor),
-                                SizedBox(
-                                  height: 15,
-                                ),
-                                MyText(
-                                    data: '8 صباحاً - 8 مساءاً',
-                                    font: arabicFont400,
-                                    size: 15,
-                                    color: pointEightFiveWhiteColor),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                              ],
-                            )),
-                        Image.asset(
-                          'assets/images/dr_mohammed.jpg',
-                          width: 160,
-                          height: 160,
-                        )
-                      ],
-                    ),
-                  ),
+                  const SizedBox(height: 40),
+
+                  DoctorInfoRow(),
+
                   Expanded(
                       child: SingleChildScrollView(
-                          child: DiscreptionContainer(
+                          child: DescriptionContainer(
                               title: "السيرة الذاتية",
-                              text:
-                                  '''بكلوريوس طب عام من جامعة بغداد كلية الطب تخصص الرعاية الصحية للأطفال من جامعة ميونخ بورد الرعاية الصحية للأطفال من جامعة كامبريدج...'''))),
+                              text: moeText))),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Column(
@@ -122,15 +90,13 @@ class _DoctorProfileState extends State<DoctorProfile> {
                               size: 25,
                               color: whiteColor),
                         ),
-                        SizedBox(
-                          height: 20,
-                        ),
+                        const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
+                              children: const [
                                 Schedule(
                                     day: 'الاثنين',
                                     time: ' 8 صباحاً - 8 مساءاً'),
@@ -142,7 +108,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                               ],
                             ),
                             Column(
-                              children: [
+                              children: const [
                                 Schedule(
                                     day: 'الاحد', time: ' 8 صباحاً - 8 مساءاً'),
                                 Schedule(
@@ -159,7 +125,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                     ),
                   ),
                   Padding(
-                      padding: EdgeInsets.only(bottom: 20),
+                      padding: const EdgeInsets.only(bottom: 20),
                       child: TextButton(
                           style: ButtonStyle(
                             shape: MaterialStateProperty.all<
@@ -176,9 +142,9 @@ class _DoctorProfileState extends State<DoctorProfile> {
                                 borderRadius: BorderRadius.circular(15)),
                             child: Center(
                                 child: MyText(
-                                    data: "أتصل للحجز ",
+                                    data: "إتصل للحجز",
                                     font: arabicFont400,
-                                    size: 25,
+                                    size: 20,
                                     color: whiteColor)),
                           ))),
                 ]),

@@ -1,4 +1,4 @@
-import 'package:baby_care/config.dart';
+import 'services/used_fonts_and_colors.dart';
 import 'package:baby_care/models.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
