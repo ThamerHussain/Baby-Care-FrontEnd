@@ -52,4 +52,6 @@ final Color pointNineWhiteColor = Colors.white.withOpacity(0.9);
 //bar chart,
 final Color pointFifteenWhiteColor = Colors.white.withOpacity(0.15);
 final Color lightBlue = Color.fromRGBO(31, 131, 248, 0.98);
+final Color greyColor = Color.fromARGB(64, 92, 100, 116);
+
 //--------------------------------------------------------------------------------------------------

@@ -12,6 +12,7 @@ import 'package:baby_care/splash_page.dart';
 import 'doctor_profile_page.dart';
 import 'sign_up_page.dart';
 import 'services/filter_button.dart';
+import 'user_profile.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
                 //   backgroundColor: Colors.lightBlue[200],
                 // )
 
-                SplashPage()));
+                 SplashPage()));
+                
   }
 }

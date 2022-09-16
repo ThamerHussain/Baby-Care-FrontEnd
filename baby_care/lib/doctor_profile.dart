@@ -1,12 +1,14 @@
+import 'package:baby_care/services/my_text.dart';
+
 import 'services/used_fonts_and_colors.dart';
 import 'package:baby_care/discreption.dart';
-import 'package:baby_care/models.dart';
 import 'discreption.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'schedule.dart';
+import 'package:baby_care/services/description_container.dart';
 
 class DoctorProfile extends StatefulWidget {
   const DoctorProfile({super.key});

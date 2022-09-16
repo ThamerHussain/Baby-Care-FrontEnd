@@ -1,6 +1,6 @@
+import 'package:baby_care/services/my_text.dart';
 import 'package:flutter/material.dart';
 import 'services/used_fonts_and_colors.dart';
-import 'models.dart';
 
 class Schedule extends StatelessWidget {
   const Schedule({
