@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:baby_care/icons/material_icons.dart';
+
+import '../icons/material_icons.dart';
 import 'used_fonts_and_colors.dart';
 
 class SplashIcon1 extends StatelessWidget {

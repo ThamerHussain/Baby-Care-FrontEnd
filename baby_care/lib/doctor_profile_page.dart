@@ -1,12 +1,12 @@
-import 'package:baby_care/services/description_container.dart';
-import 'package:baby_care/services/my_text.dart';
-import 'package:baby_care/services/products_data.dart';
-import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'doctor_info_row.dart';
+import 'models.dart';
+import 'services/description_container.dart';
+import 'services/products_data.dart';
 import 'services/schedule.dart';
+import 'services/used_fonts_and_colors.dart';
 
 class DoctorProfilePage extends StatefulWidget {
   const DoctorProfilePage({super.key});
@@ -46,15 +46,15 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                           icon: Obx(() {
                             return isNotFavorite.value
                                 ? Icon(
-                              Icons.favorite_border,
-                              size: 30,
-                              color: whiteColor,
-                            )
+                                    Icons.favorite_border,
+                                    size: 30,
+                                    color: whiteColor,
+                                  )
                                 : Icon(
-                              Icons.favorite,
-                              size: 30,
-                              color: whiteColor,
-                            );
+                                    Icons.favorite,
+                                    size: 30,
+                                    color: whiteColor,
+                                  );
                           }),
                         ),
                         const Spacer(),
@@ -69,14 +69,11 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                     ),
                   ),
                   const SizedBox(height: 40),
-
                   DoctorInfoRow(),
-
                   Expanded(
                       child: SingleChildScrollView(
                           child: DescriptionContainer(
-                              title: "السيرة الذاتية",
-                              text: moeText))),
+                              title: "السيرة الذاتية", text: moeText))),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Column(
@@ -88,7 +85,8 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                               data: 'أوقات دوام العيادة',
                               font: arabicFont400,
                               size: 25,
-                              color: whiteColor),
+                              color: whiteColor,
+                              weight:FontWeight.w400,),
                         ),
                         const SizedBox(height: 20),
                         Row(
@@ -142,10 +140,12 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                                 borderRadius: BorderRadius.circular(15)),
                             child: Center(
                                 child: MyText(
-                                    data: "إتصل للحجز",
-                                    font: arabicFont400,
-                                    size: 20,
-                                    color: whiteColor)),
+                              data: "غير متوفر لليوم",
+                              color: pointEightFiveWhiteColor,
+                              size: 20,
+                              weight: FontWeight.w400,
+                              font: arabicFont400,
+                            )),
                           ))),
                 ]),
           ),

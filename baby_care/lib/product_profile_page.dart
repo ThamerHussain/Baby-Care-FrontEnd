@@ -1,12 +1,12 @@
-import 'package:baby_care/not_reviewed/reviews_page.dart';
-import 'package:baby_care/services/my_text.dart';
-import 'package:baby_care/services/products_data.dart';
-import 'package:baby_care/services/used_fonts_and_colors.dart';
+
 import 'package:flutter/material.dart';
+import 'models.dart';
 import 'services/product_profile_info_row.dart';
 import 'services/description_container.dart';
 import 'services/product_profile_top_icons_row.dart';
 import 'services/models_moe.dart';
+import 'services/products_data.dart';
+import 'services/used_fonts_and_colors.dart';
 
 class ProductProfile extends StatefulWidget {
   const ProductProfile({super.key});
@@ -49,7 +49,7 @@ class _ProductProfileState extends State<ProductProfile> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const ProductReviewPage()),
+                                  builder: (context) => ProductProfileTopIconsRow()),
                             );
                           },
                           icon: Icon(
@@ -64,14 +64,16 @@ class _ProductProfileState extends State<ProductProfile> {
                               data: "التصنيفات والمراجعات ",
                               font: arabicFont700,
                               size: 22,
-                              color: pointEightFiveWhiteColor),
+                              color: pointEightFiveWhiteColor,
+                              weight:FontWeight.w400,),
                           const SizedBox(height: 5),
                           MyText(
                               data: " ٤,٠",
                               font: arabicFont700,
                               size: 48,
-                              color: pointEightFiveWhiteColor),
-                          const MyStar(size: 35)
+                              color: pointEightFiveWhiteColor,
+                              weight:FontWeight.w400),
+                           MyStar(size: 35)
                         ],
                       )
                     ],
@@ -99,11 +101,44 @@ class _ProductProfileState extends State<ProductProfile> {
                                   data: "إضافة الى السلة",
                                   font: arabicFont400,
                                   size: 20,
-                                  color: pointEightFiveWhiteColor)),
+                                  color: pointEightFiveWhiteColor,
+                                  weight:FontWeight.w400)),
                         ))),
               ]),
         ),
       ),
+    );
+  }
+}
+class MyStar extends StatelessWidget {
+  const MyStar({super.key, required this.size});
+  final double size;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),
+      ],
     );
   }
 }

@@ -1,11 +1,12 @@
 import 'dart:async';
-import 'package:baby_care/services/my_text.dart';
-import 'package:baby_care/services/splash_icons.dart';
-import 'package:baby_care/services/used_fonts_and_colors.dart';
-import 'package:baby_care/sign_up_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+
+import 'models.dart';
+import 'services/used_fonts_and_colors.dart';
+import 'sign_up_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -27,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: blackColor,
+      backgroundColor:blackColor,
       body: Container(
           alignment: Alignment.center,
           child: Column(
@@ -41,13 +42,15 @@ class _SplashPageState extends State<SplashPage> {
                     data: "Baby Care",
                     font: englishFontBold,
                     size: 40,
-                    color: whiteColor),
+                    color: whiteColor,
+                  weight: FontWeight.w400,),
               ),
               MyText(
                   data: "تطبيق واحد يلبي جميع إحتياجات طفلك",
                   font: arabicFont400,
                   size: 18,
-                  color: whiteColor)
+                  color: whiteColor,
+                  weight: FontWeight.w400,)
             ],
           )),
     );

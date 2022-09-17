@@ -1,9 +1,15 @@
-import 'package:baby_care/product_profile_page.dart';
-import 'package:baby_care/services/my_text.dart';
-import 'package:baby_care/services/used_fonts_and_colors.dart';
+import 'package:baby_care/services/products_data.dart';
+import 'package:baby_care/Prodect_profile/models_profile.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/services.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import '../Prodect_profile/models_profile.dart';
+import '../Prodect_profile/prodect_profil..dart';
+import '../models.dart';
 import '../services/models_moe.dart';
+import '../services/used_fonts_and_colors.dart';
+
 
 class ProductReviewPage extends StatefulWidget {
   const ProductReviewPage({super.key});
@@ -46,20 +52,19 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                           data: 'التصنيفات والمراجعات',
                           font: arabicFont700,
                           size: 25,
-                          color: whiteColor),
+                          color: whiteColor, weight:FontWeight.w400,
+                          ),
                       MyText(
                           data: "تيشيرت اليوم الاول",
                           font: arabicFont400,
                           size: 12,
-                          color: pointEightFiveWhiteColor),
+                          color: pointEightFiveWhiteColor,
+                          weight:FontWeight.w400),
                     ],
                   ),
                   IconButton(
                       onPressed: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ProductProfile()));
+                      Get.off(ProdectProfil);
                       },
                       icon: Icon(
                         Icons.arrow_forward_ios_rounded,
@@ -80,11 +85,11 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                             data: " ٤,٠",
                             font: arabicFont700,
                             size: 35,
-                            color: whiteColor),
+                            color: whiteColor,weight:FontWeight.w400),
                         Row(
                             mainAxisAlignment: MainAxisAlignment.end,
-                            children: const [
-                              MyStar(size: 25),
+                            children:  [
+                             MyStar(size: 25),
                             ]),
                       ],
                     ),
@@ -113,12 +118,12 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  const MyStar(size: 15),
+                                   MyStar(size: 15),
                                   MyText(
                                       data: 'Thamer Hussein',
                                       font: englishFontMedium,
                                       size: 17,
-                                      color: whiteColor)
+                                      color: whiteColor,weight: FontWeight.w400,)
                                 ],
                               ),
                               const SizedBox(height: 7),
@@ -127,7 +132,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                       "ماكو هيج تيشيرت يخبل بمسؤوليتي وبركبتي ",
                                   font: arabicFont400,
                                   size: 14,
-                                  color: whiteColor)
+                                  color: whiteColor,weight: FontWeight.w400,)
                             ],
                           ),
                         )
@@ -156,12 +161,46 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                             data: " إضافة المنتج الى السلة لمراجعته",
                             font: arabicFont400,
                             size: 20,
-                            color: whiteColor)),
+                            color: whiteColor,weight: FontWeight.w400,)),
                   ))
             ]),
           ],
         ),
       ),
     ));
+  }
+}
+
+
+class MyStar extends StatelessWidget {
+  const MyStar({super.key, required this.size});
+  final double size;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),
+      ],
+    );
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'used_fonts_and_colors.dart';
 import '../main_page.dart';
-import 'package:baby_care/main_page.dart';
+
 import 'my_text.dart';
 
 RxInt selectedButton = 1.obs;

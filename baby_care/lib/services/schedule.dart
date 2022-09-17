@@ -1,6 +1,8 @@
-import 'package:baby_care/services/my_text.dart';
-import 'package:baby_care/services/used_fonts_and_colors.dart';
+
 import 'package:flutter/material.dart';
+
+import '../models.dart';
+import 'used_fonts_and_colors.dart';
 
 class Schedule extends StatelessWidget {
   const Schedule({
@@ -18,16 +20,13 @@ class Schedule extends StatelessWidget {
       width: 120,
       child: Column(
         children: [
-          MyText(
-              data: day,
-              font: arabicFont400,
-              size: 20,
-              color: pointEightFiveWhiteColor),
-          MyText(
+          MyText(data: day, font: englishFontMedium, size: 20, color: pointEightFiveWhiteColor, weight: FontWeight.w400)
+          ,MyText(
               data: time,
               font: arabicFont400,
               size: 15,
-              color: pointEightFiveWhiteColor)
+              color: pointEightFiveWhiteColor,
+              weight:FontWeight.w400,)
         ],
       ),
     );

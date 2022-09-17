@@ -1,8 +1,10 @@
-import 'package:baby_care/services/my_text.dart';
-import 'package:baby_care/services/used_fonts_and_colors.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+
+import '../models.dart';
+import 'used_fonts_and_colors.dart';
 
 class DescriptionContainer extends StatefulWidget {
   final String text;
@@ -66,11 +68,13 @@ class _DescriptionContainerState extends State<DescriptionContainer> {
                                     color: whiteColor,
                                   )),
                         const Spacer(),
-                        MyText(
-                            data: widget.title,
+                        MyText(data: widget.title,
                             font: arabicFont700,
                             size: 25,
-                            color: whiteColor)
+                            color: whiteColor,
+                            weight:FontWeight.w400,
+                            )
+                            
                       ],
                     ),
                     const SizedBox(height: 15),

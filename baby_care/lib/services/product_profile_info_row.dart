@@ -1,8 +1,10 @@
-import 'package:baby_care/services/my_text.dart';
-import 'package:baby_care/services/used_fonts_and_colors.dart';
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
+import "package:baby_care/Prodect_profile/models_profile.dart";
+import '../Prodect_profile/models_profile.dart';
+import '../models.dart';
 import 'models_moe.dart';
+import 'used_fonts_and_colors.dart';
 
 class ProductInfoRow extends StatelessWidget {
   const ProductInfoRow({super.key});
@@ -50,11 +52,12 @@ class ProductInfoRow extends StatelessWidget {
                               data: "3,500 IQD",
                               font: englishFontMedium,
                               size: 20,
-                              color: whiteColor),
+                              color: whiteColor,
+                              weight: FontWeight.w400,),
                           const SizedBox(height: 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
-                            children: const [MyStar(size: 23)],
+                            children:[MyStar(size: size)],
                           )
                         ],
                       ),
@@ -66,6 +69,40 @@ class ProductInfoRow extends StatelessWidget {
           const ImageProductProfile()
         ],
       ),
+    );
+  }
+}
+
+
+class MyStar extends StatelessWidget {
+  const MyStar({super.key, required this.size});
+  final double size;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),Icon(
+          Icons.star_rate_rounded,
+          size: size,
+          color: Colors.amber,
+        ),
+      ],
     );
   }
 }

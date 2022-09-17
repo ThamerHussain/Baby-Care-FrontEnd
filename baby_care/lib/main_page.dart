@@ -1,24 +1,20 @@
-import 'package:baby_care/icons/list_icons.dart';
-import 'package:baby_care/services/category_button.dart';
-import 'package:baby_care/services/doctors_and_filters.dart';
-import 'package:baby_care/services/filters_and_items_column.dart';
-import 'package:baby_care/services/list_button.dart';
-import 'package:baby_care/services/my_text.dart';
-import 'package:baby_care/services/used_fonts_and_colors.dart';
-import 'package:baby_care/services/filter_data.dart';
-import 'package:baby_care/services/products_data.dart';
-import 'package:baby_care/sign_in_page.dart';
+
+import 'package:baby_care/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'icons/list_icons.dart';
+import 'models.dart';
 import 'services/doctors_and_filters.dart';
 import 'services/filters_and_items_column.dart';
 import 'icons/buttom_icons.dart';
 import 'icons/search_icon.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 import 'services/buttom_button.dart';
 import 'services/category_button.dart';
+import 'services/list_button.dart';
 import 'services/product_info_row.dart';
 import 'services/text_field.dart';
+import 'services/used_fonts_and_colors.dart';
 
 class MainPage extends StatelessWidget {
   MainPage({Key? key}) : super(key: key);
@@ -66,7 +62,8 @@ class MainPage extends StatelessWidget {
                                                       data: "Baby Care",
                                                       font: englishFontBold,
                                                       size: 30,
-                                                      color: whiteColor),
+                                                      color: whiteColor,
+                                                      weight: FontWeight.w400,),
                                                 ),
                                               ],
                                             ),
@@ -85,16 +82,12 @@ class MainPage extends StatelessWidget {
                                               BorderRadius.circular(10),
                                         )),
                                       ),
-                                      onPressed: (() {}),
+                                      onPressed: (() {Get.to(SearchScrean());}),
                                       child: Icon(Search.icon,
                                           color: whiteColor, size: 31),
                                     ),
                                     SizedBox(width: 160),
-                                    MyText(
-                                        data: "Baby Care",
-                                        font: englishFontBold,
-                                        size: 30,
-                                        color: whiteColor),
+                                    MyText(data: "Baby Care ", font: englishFontBold, size: 30, color: whiteColor, weight:FontWeight.w500),
                                   ]));
                   }),
                   Obx(() {

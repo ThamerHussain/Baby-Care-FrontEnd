@@ -1,7 +1,8 @@
-import 'package:baby_care/services/used_fonts_and_colors.dart';
+
 import 'package:flutter/material.dart';
 
 import 'my_text.dart';
+import 'used_fonts_and_colors.dart';
 
 Padding listButton(title, icon) {
   return Padding(
@@ -19,7 +20,7 @@ Padding listButton(title, icon) {
           height: 77,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(40),
-              color: pointOEightWhiteColor),
+              color: pointEightFiveWhiteColor),
           child: Center(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(25, 0, 25, 4),

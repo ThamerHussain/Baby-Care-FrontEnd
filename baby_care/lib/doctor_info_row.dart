@@ -1,7 +1,9 @@
-import 'package:baby_care/services/models_moe.dart';
-import 'package:baby_care/services/my_text.dart';
-import 'package:baby_care/services/used_fonts_and_colors.dart';
+
 import 'package:flutter/material.dart';
+
+import 'Prodect_profile/models_profile.dart';
+import 'models.dart';
+import 'services/used_fonts_and_colors.dart';
 
 class DoctorInfoRow extends StatelessWidget {
   const DoctorInfoRow({super.key});
@@ -45,11 +47,7 @@ class DoctorInfoRow extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 15),
-                          MyText(
-                              data: "أخصائي اطفال",
-                              font: arabicFont400,
-                              size: 20,
-                              color: pointEightFiveWhiteColor),
+                          MyText(data: 'اخصائي اطفال', font: arabicFont400, size: size, color: pointEightFiveWhiteColor, weight: FontWeight.w400),
                           const SizedBox(height: 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -58,7 +56,7 @@ class DoctorInfoRow extends StatelessWidget {
                                   data: "غير متوفر لليوم",
                                   font: arabicFont400,
                                   size: 20,
-                                  color: pointEightFiveWhiteColor),
+                                  color: pointEightFiveWhiteColor,weight:FontWeight.w400,),
                             ] //const [MyStar(size: 23)],
                           )
                         ],
@@ -67,8 +65,8 @@ class DoctorInfoRow extends StatelessWidget {
                   )
                 ]),
           ),
-          const SizedBox(width: 20),
-          const ImageProductProfile()
+           SizedBox(width: 20),
+           ImageProdectProfil(image: 'assets/image/dr_mohammed.jpeg')
         ],
       ),
     );

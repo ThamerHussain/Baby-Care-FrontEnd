@@ -1,9 +1,9 @@
-import 'package:baby_care/services/products_data.dart';
-import 'package:baby_care/main_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'products_data.dart';
 import 'used_fonts_and_colors.dart';
-import 'package:baby_care/main_page.dart';
+
 import 'filter_data.dart';
 import 'filters_and_items_column.dart';
 import 'my_text.dart';
