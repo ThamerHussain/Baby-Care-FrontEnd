@@ -1,4 +1,5 @@
 
+import 'package:baby_care/favorite_page.dart';
 import 'package:baby_care/main_page.dart';
 import 'package:baby_care/services/product_profile_info_row.dart';
 import 'package:flutter/cupertino.dart';
@@ -28,6 +29,8 @@ class _iconButtonProdectPart1State extends State<iconButtonProdectPart1> {
                     Obx( () {
                         return IconButton(
                             onPressed: () {flageFavorite.value=!flageFavorite.value;
+                            
+                          
                             },
                            icon:flageFavorite.value? Icon(
                                       Icons.favorite_border,

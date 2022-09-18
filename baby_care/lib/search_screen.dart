@@ -119,13 +119,13 @@ class _SearchScreanState extends State<SearchScrean> {
                 SizedBox(width: 80),
                 Column(
                   children: [ MyText(
-                        data: found[index][0].toString(),
+                        data: found[0].toString(),
                         font: arabicFont700,
                         size: 15,
                         color: pointEightFiveWhiteColor,
                         weight:FontWeight.w200,),
                     MyText(
-                        data: found[index][1].toString(),
+                        data: found[1].toString(),
                         font: arabicFont700,
                         size: 15,
                         color: pointEightFiveWhiteColor,
@@ -146,7 +146,7 @@ class _SearchScreanState extends State<SearchScrean> {
                   child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                       child: Image.asset(
-                        found[index][2].toString(),
+                        found[2].toString(),
                         width: 64,
                         height: 64,
                       )),
@@ -154,9 +154,9 @@ class _SearchScreanState extends State<SearchScrean> {
               ],
             ),
             onTap: (() => Get.to(DoctorProfile(
-                  doctorImage: found[index][3].toString(),
-                  doctorName: found[index][1].toString(),
-                  doctorSpcialty: found[index][2].toString(),
+                  doctorImage: found[3].toString(),
+                  doctorName: found[1].toString(),
+                  doctorSpcialty: found[2].toString(),
                 ))),
           ),
         ),

@@ -77,3 +77,5 @@ List<List<String>> doctorFilterData = [
   <String>['الجنس', 'ذكر', 'أُنثى'],
   <String>['المحافظة', 'بغداد', 'البصرة', 'الموصل', 'أُخرى'],
 ];
+
+List<String> toColorFilter=["الجنس","القياس","المحافظة","الصنف","التوفّر"];

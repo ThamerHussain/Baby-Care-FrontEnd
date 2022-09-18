@@ -1,4 +1,4 @@
-
+//المفضلة نعبر الاسم وهالشغلات لنيو كونتينر عن طريق قلاك وقيمة ترجعع من النيو كونتينر تغير   قيمتى
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';

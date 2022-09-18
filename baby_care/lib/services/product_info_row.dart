@@ -56,23 +56,7 @@ Padding productInfoRow(title, String price, imagePath) {
                           size: 15,
                           color: pointEightFiveWhiteColor),
                     ),
-                    // RatingBar.builder(
-                    //   initialRating: 3,
-                    //   minRating: 1,
-                    //   direction: Axis.horizontal,
-                    //   allowHalfRating: true,
-                    //   itemCount: 5,
-                    //   itemSize: 20,
-                    //   itemPadding: EdgeInsets.symmetric(horizontal: 0.0),
-                    //   itemBuilder: (context, _) => Icon(
-                    //     Icons.star_rounded,
-                    //     color: pointEightFiveWhiteColor,
-                    //   ),
-                    //   unratedColor: pointThreeWhiteColor,
-                    //   onRatingUpdate: (rating) {
-                    //     print(rating);
-                    //   },
-                    // ),
+                  
                   ],
                 ),
                 SizedBox(width: 5),
