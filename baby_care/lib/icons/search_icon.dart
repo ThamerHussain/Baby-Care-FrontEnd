@@ -9,7 +9,7 @@
 ///   fonts:
 ///    - family:  Material
 ///      fonts:
-///       - asset: fonts/Material.ttf
+///       - asset: fonts/user_profile_icon.ttf
 ///
 /// 
 ///

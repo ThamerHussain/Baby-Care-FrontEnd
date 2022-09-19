@@ -3,40 +3,44 @@ import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/services/products_data.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'doctor_info_row.dart';
-import 'services/schedule.dart';
+import 'package:get/get.dart';
+import '../services/doctor_profile_info_row.dart';
+import '../services/schedule.dart';
 
 class DoctorProfilePage extends StatefulWidget {
-  const DoctorProfilePage({super.key});
+  const DoctorProfilePage(
+      {super.key,
+      required this.doctorName,
+      required this.doctorImage,
+      required this.doctorSpeciality});
+
+  final String doctorName, doctorImage, doctorSpeciality;
 
   @override
   State<DoctorProfilePage> createState() => _DoctorProfilePageState();
 }
 
 class _DoctorProfilePageState extends State<DoctorProfilePage> {
-  var size, width, height;
   final RxBool isNotFavorite = true.obs;
 
   @override
   Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
-    height = size.height;
-    width = size.width;
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
+    return Scaffold(
+      body: Obx(() {
+        return Container(
           width: width,
           height: height,
-          color: blackColor,
+          color: blackColor.value,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(3, 20, 3, 0),
+                    padding: const EdgeInsets.fromLTRB(3, 40, 3, 0),
                     child: Row(
                       children: [
                         IconButton(
@@ -46,37 +50,37 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                           icon: Obx(() {
                             return isNotFavorite.value
                                 ? Icon(
-                              Icons.favorite_border,
-                              size: 30,
-                              color: whiteColor,
-                            )
+                                    Icons.favorite_border,
+                                    size: 30,
+                                    color: whiteColor.value,
+                                  )
                                 : Icon(
-                              Icons.favorite,
-                              size: 30,
-                              color: whiteColor,
-                            );
+                                    Icons.favorite,
+                                    size: 30,
+                                    color: whiteColor.value,
+                                  );
                           }),
                         ),
                         const Spacer(),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () => Get.back(),
                             icon: Icon(
                               Icons.arrow_forward_ios,
                               size: 30,
-                              color: whiteColor,
+                              color: whiteColor.value,
                             ))
                       ],
                     ),
                   ),
-                  const SizedBox(height: 40),
-
-                  DoctorInfoRow(),
-
+                  const SizedBox(height: 20),
+                  DoctorInfoRow(
+                      doctorName: widget.doctorName,
+                      doctorSpeciality: widget.doctorSpeciality,
+                      doctorImage: widget.doctorImage),
                   Expanded(
                       child: SingleChildScrollView(
                           child: DescriptionContainer(
-                              title: "السيرة الذاتية",
-                              text: moeText))),
+                              title: "السيرة الذاتية", text: moeText))),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Column(
@@ -88,7 +92,7 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                               data: 'أوقات دوام العيادة',
                               font: arabicFont400,
                               size: 25,
-                              color: whiteColor),
+                              color: whiteColor.value),
                         ),
                         const SizedBox(height: 20),
                         Row(
@@ -145,12 +149,12 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                                     data: "إتصل للحجز",
                                     font: arabicFont400,
                                     size: 20,
-                                    color: whiteColor)),
+                                    color: whiteColor.value)),
                           ))),
                 ]),
           ),
-        ),
-      ),
+        );
+      }),
     );
   }
 }

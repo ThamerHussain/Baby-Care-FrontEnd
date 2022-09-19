@@ -9,17 +9,17 @@
 ///   fonts:
 ///    - family:  Material
 ///      fonts:
-///       - asset: fonts/user_profile_icon.ttf
+///       - asset: fonts/Material.ttf
 ///
 /// 
 ///
 import 'package:flutter/widgets.dart';
 
-class call {
-  call._();
+class UserIcon {
+  UserIcon._();
 
-  static const _kFontFam = 'Mcall';
+  static const _kFontFam = 'MUser';
   static const String? _kFontPkg = null;
 
-  static const IconData icon = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

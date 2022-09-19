@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:baby_care/icons/material_icons.dart';
+import 'package:get/get.dart';
 import 'used_fonts_and_colors.dart';
 
 class SplashIcon1 extends StatelessWidget {
@@ -21,7 +22,9 @@ class SplashIcon2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Icon(splashIcon.fluent_emoji_high_contrast_baby_angel,
-        size: 70, color: whiteColor);
+    return Obx(() {
+      return Icon(splashIcon.fluent_emoji_high_contrast_baby_angel,
+          size: 70, color: whiteColor.value);
+    });
   }
 }
