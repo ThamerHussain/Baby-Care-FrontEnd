@@ -1,10 +1,11 @@
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
-
 class MyStar extends StatelessWidget {
   const MyStar({super.key, required this.size});
+
   final double size;
   final Color color = orangeColor;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -13,19 +14,23 @@ class MyStar extends StatelessWidget {
           Icons.star_rate_rounded,
           size: size,
           color: color,
-        ),Icon(
+        ),
+        Icon(
           Icons.star_rate_rounded,
           size: size,
           color: color,
-        ),Icon(
+        ),
+        Icon(
           Icons.star_rate_rounded,
           size: size,
           color: color,
-        ),Icon(
+        ),
+        Icon(
           Icons.star_rate_rounded,
           size: size,
           color: color,
-        ),Icon(
+        ),
+        Icon(
           Icons.star_rate_rounded,
           size: size,
           color: color,
@@ -35,19 +40,17 @@ class MyStar extends StatelessWidget {
   }
 }
 
-
-
-
-
 class ImageProductProfile extends StatelessWidget {
-  const ImageProductProfile({super.key});
+  const ImageProductProfile({super.key, required this.image});
+
+  final String image;
 
   @override
   Widget build(BuildContext context) {
-    return  ClipRRect(
+    return ClipRRect(
         borderRadius: BorderRadius.circular(15),
         child: Image.asset(
-          'assets/images/2.jpg',
+          image,
           width: 171,
           height: 171,
         ));

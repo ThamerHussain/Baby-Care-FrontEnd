@@ -1,18 +1,23 @@
+import 'package:baby_care/services/models_moe.dart';
 import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'models_moe.dart';
 
-class ProductInfoRow extends StatelessWidget {
-  const ProductInfoRow(
+class DoctorInfoRow extends StatefulWidget {
+  const DoctorInfoRow(
       {super.key,
-      required this.imageFromUser,
-      required this.title,
-      required this.price});
+      required this.doctorName,
+      required this.doctorImage,
+      required this.doctorSpeciality});
 
-  final String imageFromUser, title, price;
+  final String doctorName, doctorImage, doctorSpeciality;
 
+  @override
+  State<DoctorInfoRow> createState() => _DoctorInfoRowState();
+}
+
+class _DoctorInfoRowState extends State<DoctorInfoRow> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -42,9 +47,9 @@ class ProductInfoRow extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Flexible(
-                                  child: Text(title,
+                                  child: Text(widget.doctorName,
                                       style: TextStyle(
-                                          color: whiteColor.value,
+                                          color: pointEightFiveWhiteColor.value,
                                           fontSize: 24,
                                           fontFamily: arabicFont700),
                                       textAlign: TextAlign.end),
@@ -53,15 +58,21 @@ class ProductInfoRow extends StatelessWidget {
                             ),
                             const SizedBox(height: 15),
                             MyText(
-                                data: price,
-                                font: englishFontMedium,
+                                data: widget.doctorSpeciality,
+                                font: arabicFont400,
                                 size: 20,
-                                color: whiteColor.value),
+                                color: pointEightFiveWhiteColor.value),
                             const SizedBox(height: 10),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: const [MyStar(size: 23)],
-                            )
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  MyText(
+                                      data: "غير متوفر لليوم",
+                                      font: arabicFont400,
+                                      size: 20,
+                                      color: pointEightFiveWhiteColor.value),
+                                ] //const [MyStar(size: 23)],
+                                )
                           ],
                         );
                       }),
@@ -70,7 +81,7 @@ class ProductInfoRow extends StatelessWidget {
                 ]),
           ),
           const SizedBox(width: 20),
-          ImageProductProfile(image: imageFromUser)
+          ImageProductProfile(image: widget.doctorImage)
         ],
       ),
     );

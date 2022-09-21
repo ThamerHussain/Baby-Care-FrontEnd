@@ -35,11 +35,19 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+<<<<<<< HEAD
   splashscreen: ^1.3.5
   expandable_text: 2.3.0
+=======
+>>>>>>> 6981d804cebe4fae66e0ce3bfa0e4fb7744e2fbe
   flutter_rating_bar: ^4.0.1
   get: ^4.6.5
-  dropdown_button2: ^1.8.0
+  dio: ^4.0.6
+  shared_preferences: ^2.0.15
+  charts_flutter: ^0.12.0
+  flutter_smart_dialog: ^4.5.5+2
+  email_validator: ^2.1.17
+  form_validator: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -118,9 +126,18 @@ flutter:
        fonts:
          - asset: assets/fonts/tri_icons.ttf
 
+     - family: Mp
+       fonts:
+         - asset: assets/fonts/pen_icon.ttf
 
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+     - family: MUser
+       fonts:
+         - asset: assets/fonts/user_icon.ttf
+
+     - family: Mt
+       fonts:
+         - asset: assets/fonts/theme_icons.ttf
+
+#     - family: x
+#       fonts:
+#         - asset: assets/fonts/user_profile_icon.ttf

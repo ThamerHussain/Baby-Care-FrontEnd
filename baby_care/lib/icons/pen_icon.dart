@@ -15,14 +15,11 @@
 ///
 import 'package:flutter/widgets.dart';
 
-class ls {
-  ls._();
+class Pen {
+  Pen._();
 
-  static const _kFontFam = 'Mtri';
+  static const _kFontFam = 'Mp';
   static const String? _kFontPkg = null;
 
-  static const IconData out = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData call_center = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData heart = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData cart = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData icon = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
