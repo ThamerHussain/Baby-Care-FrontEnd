@@ -29,7 +29,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
         body: Container(
           width: width,
           height: height,
-          color: blackColor,
+          color: blackColor.value,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
@@ -43,13 +43,13 @@ class _DoctorProfileState extends State<DoctorProfile> {
                         IconButton(
                           onPressed: (() {}),
                           icon: Icon(Icons.favorite_border),
-                          color: whiteColor,
+                          color: whiteColor.value,
                           iconSize: 35,
                         ),
                         IconButton(
                           onPressed: (() {}),
                           icon: Icon(Icons.arrow_forward_ios),
-                          color: whiteColor,
+                          color: whiteColor.value,
                           iconSize: 35,
                         ),
                       ],
@@ -75,7 +75,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                                     data: "د. محمد عبد الرسول",
                                     font: arabicFont700,
                                     size: 22,
-                                    color: whiteColor),
+                                    color: whiteColor.value),
                                 SizedBox(
                                   height: 30,
                                 ),
@@ -83,7 +83,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                                     data: "اخصائي اطفال",
                                     font: arabicFont400,
                                     size: 23,
-                                    color: pointEightFiveWhiteColor),
+                                    color: pointEightFiveWhiteColor.value),
                                 SizedBox(
                                   height: 15,
                                 ),
@@ -91,7 +91,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                                     data: '8 صباحاً - 8 مساءاً',
                                     font: arabicFont400,
                                     size: 15,
-                                    color: pointEightFiveWhiteColor),
+                                    color: pointEightFiveWhiteColor.value),
                                 SizedBox(
                                   height: 5,
                                 ),
@@ -122,7 +122,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                               data: 'أوقات دوام العيادة',
                               font: arabicFont400,
                               size: 25,
-                              color: whiteColor),
+                              color: whiteColor.value),
                         ),
                         SizedBox(
                           height: 20,
@@ -181,7 +181,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                                     data: "أتصل للحجز ",
                                     font: arabicFont400,
                                     size: 25,
-                                    color: whiteColor)),
+                                    color: whiteColor.value)),
                           ))),
                 ]),
           ),

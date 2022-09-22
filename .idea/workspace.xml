@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fac1e627-6428-4c46-b0ae-ec1891212185" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baby_care/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/baby_care/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baby_care/lib/services/used_fonts_and_colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/baby_care/lib/services/used_fonts_and_colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baby_care/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/baby_care/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baby_care/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/baby_care/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,5 +55,16 @@
       <updated>1662773425314</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

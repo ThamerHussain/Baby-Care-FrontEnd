@@ -24,14 +24,14 @@ class UserInfo extends StatelessWidget {
                 data: header,
                 font: arabicFont400,
                 size: 20,
-                color: pointEightFiveWhiteColor),
+                color: pointEightFiveWhiteColor.value),
           ),
           Row(
             children: [
               Icon(
                 Icons.mode_edit_outlined,
                 size: 20,
-                color: whiteColor,
+                color: whiteColor.value,
               ),
               Spacer(),
               MyText(

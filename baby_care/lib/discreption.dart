@@ -52,19 +52,19 @@ class _DiscreptionContainerState extends State<DiscreptionContainer> {
                               ? Icon(
                                   Icons.keyboard_arrow_down_sharp,
                                   size: 35,
-                                  color: whiteColor,
+                                  color: whiteColor.value,
                                 )
                               : Icon(
                                   Icons.arrow_back_ios_new,
                                   size: 25,
-                                  color: whiteColor,
+                                  color: whiteColor.value,
                                 )),
                       Spacer(),
                       MyText(
                           data: widget.title,
                           font: arabicFont400,
                           size: 25,
-                          color: whiteColor)
+                          color: whiteColor.value)
                     ],
                   ),
                   SizedBox(
@@ -73,7 +73,7 @@ class _DiscreptionContainerState extends State<DiscreptionContainer> {
                   Text(
                     flage ? firstHalf : widget.text,
                     style: TextStyle(
-                        color: pointEightFiveWhiteColor,
+                        color: pointEightFiveWhiteColor.value,
                         fontSize: 13,
                         fontFamily: arabicFont400),
                     textDirection: TextDirection.rtl,

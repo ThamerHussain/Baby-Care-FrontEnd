@@ -22,12 +22,12 @@ class Schedule extends StatelessWidget {
               data: day,
               font: arabicFont400,
               size: 20,
-              color: pointEightFiveWhiteColor),
+              color: pointEightFiveWhiteColor.value),
           MyText(
               data: time,
               font: arabicFont400,
               size: 15,
-              color: pointEightFiveWhiteColor)
+              color: pointEightFiveWhiteColor.value)
         ],
       ),
     );

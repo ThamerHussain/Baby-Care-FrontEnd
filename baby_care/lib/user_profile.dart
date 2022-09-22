@@ -16,7 +16,7 @@ class _UserProfileState extends State<UserProfile> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: blackColor,
+        backgroundColor: blackColor.value,
         body: Column(
           children: [
             Row(
@@ -24,7 +24,7 @@ class _UserProfileState extends State<UserProfile> {
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: MyText(
-                    color: whiteColor,
+                    color: whiteColor.value,
                     data: 'الملف الشخصي',
                     font: arabicFont400,
                     size: 30,
@@ -36,7 +36,7 @@ class _UserProfileState extends State<UserProfile> {
                   icon: Icon(
                     Icons.arrow_forward_ios,
                     size: 30,
-                    color: whiteColor,
+                    color: whiteColor.value,
                   ),
                 ),
               ],
@@ -125,7 +125,7 @@ class _UserProfileState extends State<UserProfile> {
                           data: "تسجيل الخروج",
                           font: arabicFont400,
                           size: 20,
-                          color: whiteColor)),
+                          color: whiteColor.value)),
                 ),
               ),
             ),
