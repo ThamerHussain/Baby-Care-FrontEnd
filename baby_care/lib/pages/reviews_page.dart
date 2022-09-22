@@ -178,7 +178,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                             commentController,
                                             'كتابة تعليق',
                                             englishFontMedium,
-                                            TextDirection.rtl),
+                                            TextDirection.rtl, controller: commentController),
                                         const SizedBox(height: 40),
                                         Row(
                                           mainAxisAlignment:
@@ -195,7 +195,13 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                                       BorderRadius.circular(10),
                                                 )),
                                               ),
-                                              onPressed: (() {}),
+                                              onPressed: (() {
+                                                setState(() {
+                                                  addCommnet(commentController
+                                                      .toString());
+                                                  commentController.clear();
+                                                });
+                                              }),
                                               child: Container(
                                                 height: 40,
                                                 width: 130,
@@ -285,42 +291,50 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
   Column commentContainer(commenter, comment, width, height) {
     return Column(
       children: [
-        Container(
-          color: blackColor.value,
-          height: height * 0.1,
-          width: width * 0.9,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  MyText(
-                      data: '2022/9/16',
-                      //will be changeable
-                      font: arabicFont400,
-                      size: 10,
-                      color: pointEightFiveWhiteColor.value),
-                  const SizedBox(width: 15),
-                  const MyStar(size: 13),
-                  const SizedBox(width: 15),
-                  MyText(
-                      data: commenter,
-                      font: englishFontMedium,
-                      size: 15,
-                      color: pointEightFiveWhiteColor.value)
-                ],
-              ),
-              const SizedBox(height: 7),
-              MyText(
-                  data: comment,
-                  font: arabicFont400,
-                  size: 12,
-                  color: pointEightFiveWhiteColor.value)
-            ],
+        Container(width: 350,height: 500,
+          child: ListView(
+            children: prodectComment.map((e) => Container(
+            color: blackColor.value,
+            height: height * 0.1,
+            width: width * 0.9,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    MyText(
+                        data: '2022/9/16',
+                        //will be changeable
+                        font: arabicFont400,
+                        size: 10,
+                        color: pointEightFiveWhiteColor.value),
+                    const SizedBox(width: 15),
+                    const MyStar(size: 13),
+                    const SizedBox(width: 15),
+                    MyText(
+                        data: commenter,
+                        font: englishFontMedium,
+                        size: 15,
+                        color: pointEightFiveWhiteColor.value)
+                  ],
+                ),
+                const SizedBox(height: 7),
+                MyText(
+                    data: e,
+                    font: arabicFont400,
+                    size: 12,
+                    color: pointEightFiveWhiteColor.value)
+              ],
+            ),
+          )).toList(),
           ),
         )
       ],
     );
   }
+}
+
+addCommnet(String comment) {
+  prodectComment.add(comment);
 }
