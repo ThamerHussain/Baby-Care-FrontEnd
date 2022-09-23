@@ -1,7 +1,7 @@
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
-List<String> prodectComment = [];
+
 
 List<List<String>> suggestionsProducts = [
   <String>['مقترحات', '13,000', 'assets/images/1.jpg'],
