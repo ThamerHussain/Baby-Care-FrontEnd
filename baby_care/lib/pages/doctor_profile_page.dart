@@ -3,6 +3,7 @@ import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/services/products_data.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get/get.dart';
 import '../services/doctor_profile_info_row.dart';
 import '../services/schedule.dart';
@@ -137,7 +138,9 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                               borderRadius: BorderRadius.circular(10),
                             )),
                           ),
-                          onPressed: (() {}),
+                          onPressed: (() {
+                            FlutterPhoneDirectCaller.callNumber("07818115142");
+                          }),
                           child: Container(
                             width: width * 0.9,
                             height: height * 0.06,

@@ -1,5 +1,7 @@
+
 import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/services/products_data.dart';
+import 'package:baby_care/services/star_rating_new.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -195,7 +197,15 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                                       BorderRadius.circular(10),
                                                 )),
                                               ),
-                                              onPressed: (() {}),
+                                              onPressed: (() {
+                                                setState((() {
+                                                  ProdectRating.add(
+                                                      commentController.text,
+                                                      stars.value);
+                                                  commentController.clear();
+                                                  stars=0.0.obs;
+                                                }));
+                                              }),
                                               child: Container(
                                                 height: 40,
                                                 width: 130,
@@ -266,6 +276,8 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
     }));
   }
 
+
+ 
   Padding commentsContainer(data, width, height) {
     return Padding(
         padding: const EdgeInsets.only(top: 85),
@@ -286,41 +298,49 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
     return Column(
       children: [
         Container(
-          color: blackColor.value,
-          height: height * 0.1,
-          width: width * 0.9,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  MyText(
-                      data: '2022/9/16',
-                      //will be changeable
-                      font: arabicFont400,
-                      size: 10,
-                      color: pointEightFiveWhiteColor.value),
-                  const SizedBox(width: 15),
-                  const MyStar(size: 13),
-                  const SizedBox(width: 15),
-                  MyText(
-                      data: commenter,
-                      font: englishFontMedium,
-                      size: 15,
-                      color: pointEightFiveWhiteColor.value)
-                ],
-              ),
-              const SizedBox(height: 7),
-              MyText(
-                  data: comment,
-                  font: arabicFont400,
-                  size: 12,
-                  color: pointEightFiveWhiteColor.value)
-            ],
-          ),
+          width: width,
+          height: height / 2,
+          child: ListView(
+              children: ProdectRating.prodectCommentsAndStars
+                  .map((e) => Container(
+                        color: blackColor.value,
+                        height: height * 0.1,
+                        width: width * 0.9,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                MyText(
+                                    data: '2022/9/16',
+                                    //will be changeable
+                                    font: arabicFont400,
+                                    size: 10,
+                                    color: pointEightFiveWhiteColor.value),
+                                const SizedBox(width: 15),
+                                StarRating(rate:e.stars.toInt().obs),
+                                const SizedBox(width: 15),
+                                MyText(
+                                    data: commenter,
+                                    font: englishFontMedium,
+                                    size: 15,
+                                    color: pointEightFiveWhiteColor.value)
+                              ],
+                            ),
+                            const SizedBox(height: 7),
+                            MyText(
+                                data: e.comment,
+                                font: arabicFont400,
+                                size: 12,
+                                color: pointEightFiveWhiteColor.value)
+                          ],
+                        ),
+                      ))
+                  .toList()),
         )
       ],
     );
   }
 }
+

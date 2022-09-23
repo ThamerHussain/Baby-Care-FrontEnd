@@ -254,3 +254,26 @@ List<List<String>> myOrdersData = [
   <String>['حفاظات بامبرز', '13,000', 'assets/images/1.jpg', '3'],
   <String>['حفاظات بامبرز', '13,000', 'assets/images/1.jpg', '1'],
 ];
+
+
+class ProdectRating {
+  final String comment;
+  final double stars;
+  
+  
+
+  ProdectRating(this.comment
+  ,this.stars
+  );
+
+  static List<ProdectRating> prodectCommentsAndStars = [];
+
+  static add(String comment,double stars) {
+    prodectCommentsAndStars.add(ProdectRating(comment,stars));
+  }
+}
+
+ List<String> prodectComment = [];
+  addComment(String comment) {
+    prodectComment.add(comment);
+  }

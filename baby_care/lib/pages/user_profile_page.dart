@@ -14,6 +14,9 @@ class UserProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Obx(() {
       return Scaffold(
         backgroundColor: blackColor.value,
