@@ -7,7 +7,7 @@ Padding tField(controller, hint, fontFamily, textDirection,
     emailValidation = false,
     passwordValidation = false,
     firstNameValidation = false,
-    lastNameValidation = false}) {
+    lastNameValidation = false, required TextEditingController controller}) {
   return Padding(
     padding: const EdgeInsets.all(15.0),
     child: Obx(() {

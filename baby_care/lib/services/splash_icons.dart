@@ -3,6 +3,8 @@ import 'package:baby_care/icons/material_icons.dart';
 import 'package:get/get.dart';
 import 'used_fonts_and_colors.dart';
 
+
+
 class SplashIcon1 extends StatelessWidget {
   const SplashIcon1({super.key});
 

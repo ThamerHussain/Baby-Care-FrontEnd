@@ -23,56 +23,77 @@ RxBool darkTheme = true.obs;
 //--------------------------------------------------------------------------------------------------
 //main background, unselected Category Background, unselected Category Background
 //bottom background, favorite icon,
-final Rx<Color> blackColor =  Colors.black.obs;
+final Rx<Color> blackColor = Colors.black.obs;
 //baby care, selected Category text, selected filter text, search icon, selected bottom icon
 //selected bottom text, arrow icons, bar chart rate number, call icon, sign up navigator text
 //please text, login navigator text,
-final Rx<Color> whiteColor =  Colors.white.obs;
+final Rx<Color> whiteColor = Colors.white.obs;
 //unselected bottom icon, unselected Category Text, unselected bottom icon, unselected bottom text
-final Rx<Color> halfWhiteColor =  Colors.white.withOpacity(0.5).obs;
+final Rx<Color> halfWhiteColor = Colors.white.withOpacity(0.5).obs;
 //unselected Star, hint text
-final Rx<Color> pointThreeWhiteColor =  Colors.white.withOpacity(0.3).obs;
+final Rx<Color> pointThreeWhiteColor = Colors.white.withOpacity(0.3).obs;
 //product name, price, selected star, Shopping basket, description title, description content
 //add to basket text, commenter, comment, comment date, doctor name, doctor specialty
 //doctor availability time, doctor availability title, doctor cv title, doctor cv
 //appointment booking text, list page options text and icon, my orders title,
 //increase and decrease product text, quantity text, make order text
 //login text, signup text,
-final Rx<Color> pointEightFiveWhiteColor =  Colors.white.withOpacity(0.85).obs;
+final Rx<Color> pointEightFiveWhiteColor = Colors.white.withOpacity(0.85).obs;
 //selected Category Background, selected filter Background, Shopping basket background
 //rate title, sub rate product title, rate number, call icon background
-//list page options background, increase and decrease product background,
-final Rx<Color> pointOEightWhiteColor =  Colors.white.withOpacity(0.08).obs; // final Color oneFourColor = Color(0xff141414);
+//list page options background, increase and decrease product background,// final Color oneFourColor = Color(0xff141414);
+final Rx<Color> pointOEightWhiteColor = Colors.white
+    .withOpacity(0.08)
+    .obs; // final Color oneFourColor = Color(0xff141414);
 //selected star 2,
 const Color orangeColor = Color(0xffFF701F);
 //add to basket background, appointment booking background, make order background
 //login background, signup background
 final Color blueColor = const Color(0xff1F83F8).withOpacity(0.98);
 //bar chart line fill,
-final Rx<Color> pointNineWhiteColor =  Colors.white.withOpacity(0.9).obs;
+final Rx<Color> pointNineWhiteColor = Colors.white.withOpacity(0.9).obs;
 //bar chart,
-final Rx<Color> pointFifteenWhiteColor =  Colors.white.withOpacity(0.15).obs;
-final Rx<Color> twentyFourColor =  Colors.white24.obs;
-Rx<dynamic> chartWhite =  charts.MaterialPalette.white.obs;
-final Rx<Color> shadedGrayColor =  Colors.grey.shade800.obs;
-final Rx<Color> userProfileCardColor =  const Color(0xff141414).obs;
+final Color lightBlue = Color.fromRGBO(31, 131, 248, 0.98);
+final Color greyColor = Color.fromARGB(64, 92, 100, 116);
+
+//--------------------------------------------------------------------------------------------------
+final Rx<Color> pointFifteenWhiteColor = Colors.white.withOpacity(0.15).obs;
+final Rx<Color> twentyFourColor = Colors.white24.obs;
+Rx<dynamic> chartWhite = charts.MaterialPalette.white.obs;
+final Rx<Color> shadedGrayColor = Colors.grey.shade800.obs;
+final Rx<Color> userProfileCardColor = const Color(0xff141414).obs;
 const Color grayColor = Colors.grey;
 const Color redColor = Colors.red;
 //--------------------------------------------------------------------------------------------------
-changeTheme(){
+changeTheme() {
   darkTheme.value = !darkTheme.value;
   blackColor.value = darkTheme.value ? Colors.black : Colors.white;
   whiteColor.value = darkTheme.value ? Colors.white : Colors.black;
-  halfWhiteColor.value = darkTheme.value ? Colors.white.withOpacity(0.5) : Colors.black.withOpacity(0.5);
-  pointThreeWhiteColor.value = darkTheme.value ? Colors.white.withOpacity(0.3) : Colors.black.withOpacity(0.3);
-  pointEightFiveWhiteColor.value = darkTheme.value ? Colors.white.withOpacity(0.85) : Colors.black.withOpacity(0.85);
-  pointOEightWhiteColor.value = darkTheme.value ? Colors.white.withOpacity(0.08) : Colors.black.withOpacity(0.08);
-  pointNineWhiteColor.value = darkTheme.value ? Colors.white.withOpacity(0.9) : Colors.black.withOpacity(0.9);
-  pointFifteenWhiteColor.value = darkTheme.value ? Colors.white.withOpacity(0.15) : Colors.black.withOpacity(0.15);
+  halfWhiteColor.value = darkTheme.value
+      ? Colors.white.withOpacity(0.5)
+      : Colors.black.withOpacity(0.5);
+  pointThreeWhiteColor.value = darkTheme.value
+      ? Colors.white.withOpacity(0.3)
+      : Colors.black.withOpacity(0.3);
+  pointEightFiveWhiteColor.value = darkTheme.value
+      ? Colors.white.withOpacity(0.85)
+      : Colors.black.withOpacity(0.85);
+  pointOEightWhiteColor.value = darkTheme.value
+      ? Colors.white.withOpacity(0.08)
+      : Colors.black.withOpacity(0.08);
+  pointNineWhiteColor.value = darkTheme.value
+      ? Colors.white.withOpacity(0.9)
+      : Colors.black.withOpacity(0.9);
+  pointFifteenWhiteColor.value = darkTheme.value
+      ? Colors.white.withOpacity(0.15)
+      : Colors.black.withOpacity(0.15);
   twentyFourColor.value = darkTheme.value ? Colors.white24 : Colors.black26;
-  chartWhite.value = darkTheme.value ? charts.MaterialPalette.white : charts.MaterialPalette.black;
+  chartWhite.value = darkTheme.value
+      ? charts.MaterialPalette.white
+      : charts.MaterialPalette.black;
   shadedGrayColor.value = darkTheme.value ? Colors.grey.shade800 : Colors.white;
-  userProfileCardColor.value = darkTheme.value ? const Color(0xff141414) : Colors.black12;
+  userProfileCardColor.value =
+      darkTheme.value ? const Color(0xff141414) : Colors.black12;
 }
 
 
