@@ -1,5 +1,6 @@
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:get/get.dart';
 
 List<List<String>> suggestionsProducts = [
   <String>['مقترحات', '13,000', 'assets/images/1.jpg'],
@@ -223,7 +224,7 @@ final List<RateSeries> data = [
   ),
 ];
 
-List<List<String>> comments = [
+RxList<List<String>> comments = [
   <String>['Thamer Hussein', 'ماكو هيج تيشيرت يخبل بمسؤوليتي وبركبتي (هذا محمد البوي كتبها)'],
   <String>['Thamer Hussein', 'ماكو هيج تيشيرت يخبل بمسؤوليتي وبركبتي (هذا محمد البوي كتبها)'],
   <String>['Thamer Hussein', 'ماكو هيج تيشيرت يخبل بمسؤوليتي وبركبتي (هذا محمد البوي كتبها)'],
@@ -237,7 +238,7 @@ List<List<String>> comments = [
   <String>['Thamer Hussein', 'ماكو هيج تيشيرت يخبل بمسؤوليتي وبركبتي (هذا محمد البوي كتبها)'],
   <String>['Thamer Hussein', 'ماكو هيج تيشيرت يخبل بمسؤوليتي وبركبتي (هذا محمد البوي كتبها)'],
   <String>['Thamer Hussein', 'ماكو هيج تيشيرت يخبل بمسؤوليتي وبركبتي (هذا محمد البوي كتبها)'],
-  ];
+  ].obs;
 
 List<List<String>> myOrdersData = [
   <String>['حفاظات', '13,000', 'assets/images/1.jpg', '3'],
@@ -254,3 +255,25 @@ List<List<String>> myOrdersData = [
   <String>['حفاظات بامبرز', '13,000', 'assets/images/1.jpg', '3'],
   <String>['حفاظات بامبرز', '13,000', 'assets/images/1.jpg', '1'],
 ];
+
+// class ProducxtRating {
+//   final String comment;
+//   final double stars;
+//
+//   ProductRating(this.comment
+//       ,this.stars
+//       );
+//
+//   static RxList<ProductRating>? productCommentsAndStars = [].obs as RxList<ProductRating>?;
+//
+//   static add(String comment,double stars) {
+//     productCommentsAndStars?.value.add(ProductRating(comment,stars));
+//   }
+// }
+//
+// List<String> productComment = [];
+// addComment(String comment) {
+//   productComment.add(comment);
+// }
+
+RxList<dynamic> productRating = [].obs;

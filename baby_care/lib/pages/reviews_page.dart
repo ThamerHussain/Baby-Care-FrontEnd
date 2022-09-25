@@ -7,6 +7,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import '../services/rating_chart.dart';
 import '../services/models_moe.dart';
+import '../services/star_rating_new.dart';
 import '../services/text_field.dart';
 
 class ProductReviewPage extends StatefulWidget {
@@ -93,7 +94,13 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                         ],
                       ),
                     ),
-                    commentsContainer(comments, width, height),
+                    // Obx((){return
+                    // commentsContainer(ProductRating.productCommentsAndStars, width, height);}),
+                    //       Obx((){return
+                    const CommentContainer()
+                    // ; })
+                    ,
+
                     const SizedBox(height: 40),
                     TextButton(
                         style: ButtonStyle(
@@ -138,12 +145,12 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                           ],
                                         ),
                                         const SizedBox(height: 40),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Obx(() {
-                                              return RatingBar.builder(
+                                        Obx(() {
+                                          return Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              RatingBar.builder(
                                                 initialRating: stars.value,
                                                 minRating: 1,
                                                 direction: Axis.horizontal,
@@ -169,10 +176,10 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                                 updateOnDrag: true,
                                                 textDirection:
                                                     TextDirection.rtl,
-                                              );
-                                            }),
-                                          ],
-                                        ),
+                                              )
+                                            ],
+                                          );
+                                        }),
                                         const SizedBox(height: 40),
                                         tField(
                                             commentController,
@@ -195,7 +202,16 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                                       BorderRadius.circular(10),
                                                 )),
                                               ),
-                                              onPressed: (() {}),
+                                              onPressed: (() {
+                                                productRating.add([
+                                                  commentController.text,
+                                                  stars.value
+                                                ]);
+                                                commentController.clear();
+                                                stars = 0.0.obs;
+                                                SmartDialog.dismiss();
+                                                // stars.refresh();
+                                              }),
                                               child: Container(
                                                 height: 40,
                                                 width: 130,
@@ -223,7 +239,12 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                                       BorderRadius.circular(10),
                                                 )),
                                               ),
-                                              onPressed: (() {}),
+                                              onPressed: (() {
+                                                commentController.clear();
+                                                stars = 0.0.obs;
+                                                SmartDialog.dismiss();
+                                                // SmartDialog.showLoading();
+                                              }),
                                               child: Container(
                                                 height: 40,
                                                 width: 130,
@@ -243,7 +264,8 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                 );
                               },
                               alignment: Alignment
-                                  .bottomCenter); //, clickMaskDismiss: false);
+                                  .bottomCenter
+                          ); //, clickMaskDismiss: false);
                         }),
                         child: Container(
                           width: width * 0.9,
@@ -265,62 +287,174 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
       );
     }));
   }
+// Padding commentsContainer(data, width, height) {
+//   return Padding(
+//       padding: const EdgeInsets.only(top: 85),
+//       child: Container(
+//         color: blackColor.value,
+//         width: width,
+//         height: height * 0.45,
+//         child: ListView(
+//           children: data
+//               .map<Column>((sample) =>
+//                   commentContainer(sample[0], sample[1], width, height))
+//               .toList(),
+//         ),
+//       ));
+// }
+//
+// Column commentContainer(stars, comment, width, height) {//(commenter, comment, width, height) {
+//   return Column(
+//     children: [SizedBox(
+//         width: width,
+//         height: height / 2,
+//         child: Container(
+//           color: blackColor.value,
+//           height: height * 0.1,
+//           width: width * 0.9,
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.end,
+//             children: [
+//               Row(
+//                 mainAxisAlignment: MainAxisAlignment.end,
+//                 children: [
+//                   MyText(
+//                       data: '2022/9/16',
+//                       //will be changeable
+//                       font: arabicFont400,
+//                       size: 10,
+//                       color: pointEightFiveWhiteColor.value),
+//                   const SizedBox(width: 15),
+//                   const MyStar(size: 13),
+//                   const SizedBox(width: 15),
+//                   MyText(
+//                       data: 'commenter',
+//                       font: englishFontMedium,
+//                       size: 15,
+//                       color: pointEightFiveWhiteColor.value)
+//                 ],
+//               ),
+//               const SizedBox(height: 7),
+//               MyText(
+//                   data: comment,
+//                   font: arabicFont400,
+//                   size: 12,
+//                   color: pointEightFiveWhiteColor.value)
+//             ],
+//           ),
+//         )
+//     )
+//     ],
+//   );
+//
+//   Column commentContainer(commenter, comment, width, height) {
+//     return Column(
+//       children: [SizedBox(
+//         width: width,
+//         height: height / 2,
+//         child: ListView(
+//             children: ProductRating.productCommentsAndStars.map((e) =>
+//                 Container(
+//                   color: blackColor.value,
+//                   height: height * 0.1,
+//                   width: width * 0.9,
+//                   child: Column(
+//                     crossAxisAlignment: CrossAxisAlignment.end,
+//                     children: [
+//                       Row(
+//                         mainAxisAlignment: MainAxisAlignment.end,
+//                         children: [
+//                           MyText(
+//                               data: '2022/9/16',
+//                               //will be changeable
+//                               font: arabicFont400,
+//                               size: 10,
+//                               color: pointEightFiveWhiteColor.value),
+//                           const SizedBox(width: 15),
+//                           const MyStar(size: 13),
+//                           const SizedBox(width: 15),
+//                           MyText(
+//                               data: commenter,
+//                               font: englishFontMedium,
+//                               size: 15,
+//                               color: pointEightFiveWhiteColor.value)
+//                         ],
+//                       ),
+//                       const SizedBox(height: 7),
+//                       MyText(
+//                           data: comment,
+//                           font: arabicFont400,
+//                           size: 12,
+//                           color: pointEightFiveWhiteColor.value)
+//                     ],
+//                   ),
+//                 )).toList()
+//         ),
+//       )
+//       ],
+//     );
+//   }
+}
 
-  Padding commentsContainer(data, width, height) {
+class CommentContainer extends StatelessWidget {
+  const CommentContainer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Padding(
-        padding: const EdgeInsets.only(top: 85),
-        child: Container(
-          color: blackColor.value,
-          width: width,
-          height: height * 0.45,
-          child: ListView(
-            children: data
-                .map<Column>((sample) =>
-                    commentContainer(sample[0], sample[1], width, height))
-                .toList(),
-          ),
-        ));
-  }
-
-  Column commentContainer(commenter, comment, width, height) {
-    return Column(
-      children: [
-        Container(
-          color: blackColor.value,
-          height: height * 0.1,
-          width: width * 0.9,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  MyText(
-                      data: '2022/9/16',
-                      //will be changeable
-                      font: arabicFont400,
-                      size: 10,
-                      color: pointEightFiveWhiteColor.value),
-                  const SizedBox(width: 15),
-                  const MyStar(size: 13),
-                  const SizedBox(width: 15),
-                  MyText(
-                      data: commenter,
-                      font: englishFontMedium,
-                      size: 15,
-                      color: pointEightFiveWhiteColor.value)
-                ],
-              ),
-              const SizedBox(height: 7),
-              MyText(
-                  data: comment,
-                  font: arabicFont400,
-                  size: 12,
-                  color: pointEightFiveWhiteColor.value)
-            ],
-          ),
-        )
-      ],
+      padding: const EdgeInsets.only(top: 30),
+      child: Column(
+        children: [
+          Obx(() {
+            return SizedBox(
+              width: width,
+              height: height / 2,
+              child: ListView(
+                  children: productRating.value
+                      .map((e) => Container(
+                            color: blackColor.value,
+                            height: height * 0.1,
+                            width: width * 0.9,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    MyText(
+                                        data: '2022/9/16',
+                                        //will be changeable
+                                        font: arabicFont400,
+                                        size: 10,
+                                        color: pointEightFiveWhiteColor.value),
+                                    const SizedBox(width: 15),
+                                    StarRating(rate: e[1].toInt()),
+                                    //.stars.toInt().obs),
+                                    const SizedBox(width: 15),
+                                    MyText(
+                                        data: 'Thamer',
+                                        font: englishFontMedium,
+                                        size: 15,
+                                        color: pointEightFiveWhiteColor.value)
+                                  ],
+                                ),
+                                const SizedBox(height: 7),
+                                MyText(
+                                    data: e[0],
+                                    font: arabicFont400,
+                                    size: 12,
+                                    color: pointEightFiveWhiteColor.value)
+                              ],
+                            ),
+                          ))
+                      .toList()),
+            );
+          }),
+        ],
+      ),
     );
   }
 }

@@ -22,6 +22,9 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Scaffold build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Scaffold(
       body: Obx(() {
         return Container(

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 Padding orderInfoRow(title, String price, imagePath, quantity) {
+
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 30),
     child: Obx(() {
@@ -23,6 +24,7 @@ Padding orderInfoRow(title, String price, imagePath, quantity) {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                Obx((){return
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -34,7 +36,11 @@ Padding orderInfoRow(title, String price, imagePath, quantity) {
                             borderRadius: BorderRadius.circular(10),
                           )),
                         ),
-                        onPressed: (() {}),
+                        onPressed: (() {
+                          int q = int.parse(quantity);
+                          q += 1;
+                          quantity = q.toString();
+                        }),
                         child: Container(
                           width: 51,
                           height: 20,
@@ -53,7 +59,11 @@ Padding orderInfoRow(title, String price, imagePath, quantity) {
                             borderRadius: BorderRadius.circular(10),
                           )),
                         ),
-                        onPressed: (() {}),
+                        onPressed: (() {
+                          int q = int.parse(quantity);
+                          if (q > 0) q -= 1;
+                          quantity = q.toString();
+                        }),
                         child: Container(
                           width: 51,
                           height: 20,
@@ -65,6 +75,7 @@ Padding orderInfoRow(title, String price, imagePath, quantity) {
                                   color: pointNineWhiteColor.value, size: 20)),
                         )),
                   ],
+                );}
                 ),
                 const Spacer(),
                 Column(

@@ -31,6 +31,9 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Scaffold(
       body: Obx(() {
         return Container(
@@ -188,8 +191,8 @@ class MainPage extends StatelessWidget {
                 ),
                 Container(
                   color: blackColor.value,
-                  height: 78,
-                  width: double.maxFinite,
+                  height: height*0.13,//78,
+                  width: width,//double.maxFinite,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 2),
                     child: Row(
