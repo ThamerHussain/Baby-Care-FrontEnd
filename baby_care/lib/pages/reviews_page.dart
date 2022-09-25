@@ -95,7 +95,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                         ],
                       ),
                     ),
-                    commentsContainer(comments, width, height),
+                    commentContainer(),
                     const SizedBox(height: 40),
                     TextButton(
                         style: ButtonStyle(
@@ -278,69 +278,71 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
 
 
  
-  Padding commentsContainer(data, width, height) {
-    return Padding(
-        padding: const EdgeInsets.only(top: 85),
-        child: Container(
-          color: blackColor.value,
-          width: width,
-          height: height * 0.45,
-          child: ListView(
-            children: data
-                .map<Column>((sample) =>
-                    commentContainer(sample[0], sample[1], width, height))
-                .toList(),
-          ),
-        ));
-  }
+  
+   
+}
 
-  Column commentContainer(commenter, comment, width, height) {
-    return Column(
-      children: [
-        Container(
-          width: width,
-          height: height / 2,
-          child: ListView(
-              children: ProdectRating.prodectCommentsAndStars
-                  .map((e) => Container(
-                        color: blackColor.value,
-                        height: height * 0.1,
-                        width: width * 0.9,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                MyText(
-                                    data: '2022/9/16',
-                                    //will be changeable
-                                    font: arabicFont400,
-                                    size: 10,
-                                    color: pointEightFiveWhiteColor.value),
-                                const SizedBox(width: 15),
-                                StarRating(rate:e.stars.toInt().obs),
-                                const SizedBox(width: 15),
-                                MyText(
-                                    data: commenter,
-                                    font: englishFontMedium,
-                                    size: 15,
-                                    color: pointEightFiveWhiteColor.value)
-                              ],
-                            ),
-                            const SizedBox(height: 7),
-                            MyText(
-                                data: e.comment,
-                                font: arabicFont400,
-                                size: 12,
-                                color: pointEightFiveWhiteColor.value)
-                          ],
-                        ),
-                      ))
-                  .toList()),
-        )
-      ],
+class commentContainer extends StatefulWidget {
+  const commentContainer({super.key});
+
+  @override
+  State<commentContainer> createState() => _commentContainerState();
+}
+
+class _commentContainerState extends State<commentContainer> {
+  @override
+  Widget build(BuildContext context) {
+     var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
+    return Padding(
+      padding: const EdgeInsets.only(top: 30),
+      child: Column(
+        children: [
+          Container(
+            width: width,
+            height: height / 2,
+            child: ListView(
+                children: ProdectRating.prodectCommentsAndStars
+                    .map((e) => Container(
+                          color: blackColor.value,
+                          height: height * 0.1,
+                          width: width * 0.9,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  MyText(
+                                      data: '2022/9/16',
+                                      //will be changeable
+                                      font: arabicFont400,
+                                      size: 10,
+                                      color: pointEightFiveWhiteColor.value),
+                                  const SizedBox(width: 15),
+                                  StarRating(rate:e.stars.toInt().obs),
+                                  const SizedBox(width: 15),
+                                  MyText(
+                                      data: 'Thamer',
+                                      font: englishFontMedium,
+                                      size: 15,
+                                      color: pointEightFiveWhiteColor.value)
+                                ],
+                              ),
+                              const SizedBox(height: 7),
+                              MyText(
+                                  data: e.comment,
+                                  font: arabicFont400,
+                                  size: 12,
+                                  color: pointEightFiveWhiteColor.value)
+                            ],
+                          ),
+                        ))
+                    .toList()),
+          )
+        ],
+      ),
     );
   }
 }
-
