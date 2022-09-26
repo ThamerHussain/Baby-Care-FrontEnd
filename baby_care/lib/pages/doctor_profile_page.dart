@@ -139,7 +139,9 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                             )),
                           ),
                           onPressed: (() {
+
                             FlutterPhoneDirectCaller.callNumber("07818115142");
+
                           }),
                           child: Container(
                             width: width * 0.9,

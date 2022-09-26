@@ -191,8 +191,9 @@ class MainPage extends StatelessWidget {
                 ),
                 Container(
                   color: blackColor.value,
-                  height: height*0.13,
-                  width: width,
+
+                  height: height*0.13,//78,
+                  width: width,//double.maxFinite,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 2),
                     child: Row(

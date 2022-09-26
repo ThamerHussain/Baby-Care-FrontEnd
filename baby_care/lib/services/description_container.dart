@@ -42,6 +42,7 @@ class _DescriptionContainerState extends State<DescriptionContainer> {
               ? Text(widget.text,
                   style: TextStyle(
                       color: pointEightFiveWhiteColor.value,
+
                       fontSize: 15,
                       fontFamily: arabicFont400),
                   textDirection: TextDirection.rtl)
@@ -78,6 +79,7 @@ class _DescriptionContainerState extends State<DescriptionContainer> {
                       Text(flag.value ? '$firstHalf...' : widget.text,
                           style: TextStyle(
                               color: pointEightFiveWhiteColor.value,
+
                               fontSize: 15.5,
                               fontFamily: arabicFont400),
                           textDirection: TextDirection.rtl)

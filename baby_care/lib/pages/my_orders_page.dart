@@ -57,7 +57,7 @@ class MyOrdersPage extends StatelessWidget {
                 child: Column(
                   children: myOrdersData
                       .map<Padding>((List<String> product) => orderInfoRow(
-                          product[0], product[1], product[2], product[3]))
+                          product[0], product[1], product[2]))
                       .toList(),
                 ),
               ),
