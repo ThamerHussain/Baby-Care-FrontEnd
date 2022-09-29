@@ -59,8 +59,8 @@ class UserProfilePage extends StatelessWidget {
                 children: [
                   Center(
                     child: Container(
-                      height: 350,
-                      width: 350,
+                      height: height*0.43,
+                      width: width,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),
                         color: userProfileCardColor.value,
@@ -98,8 +98,8 @@ class UserProfilePage extends StatelessWidget {
                     right: 0,
                     child: Center(
                       child: Container(
-                        width: 120,
-                        height: 120,
+                        width: width*0.33,
+                        height: height*0.15,
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(60),
@@ -127,8 +127,8 @@ class UserProfilePage extends StatelessWidget {
                     Get.off(const SignInPage());
                   }),
                   child: Container(
-                    width: 320,
-                    height: 55,
+                    width: width*0.9,
+                    height: width*0.17,
                     decoration: BoxDecoration(
                         color: blueColor,
                         borderRadius: BorderRadius.circular(20)),

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 Padding orderInfoRow(title, String price, imagePath) {
-  RxInt  quantity=1.obs;
+  RxInt quantity = 1.obs;
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 30),
     child: Obx(() {
@@ -27,7 +27,6 @@ Padding orderInfoRow(title, String price, imagePath) {
               children: [
                 Obx((){return
                 Row(
-
                   children: [
                     TextButton(
                         style: ButtonStyle(
@@ -38,11 +37,8 @@ Padding orderInfoRow(title, String price, imagePath) {
                           )),
                         ),
                         onPressed: (() {
-
-                          
                           quantity += 1;
                           quantity.toString();
-                          
                         }),
                         child: Container(
                           width: 51,
@@ -64,11 +60,12 @@ Padding orderInfoRow(title, String price, imagePath) {
                         ),
                         onPressed: (() {
                           if(quantity>0){
-                          quantity -= 1;
-                          quantity.toString();}
-                        }),
+                            quantity -= 1;
+                            quantity.toString();
+                          }
+                          }),
                         child: Container(
-                          width: 31,
+                          width: 51,//51,
                           height: 20,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),

@@ -117,7 +117,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                               builder: (_) {
                                 return Container(
                                   width: double.maxFinite,
-                                  height: 450,
+                                  height: height*0.6,
                                   decoration: BoxDecoration(
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(25)),
@@ -158,7 +158,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                                 direction: Axis.horizontal,
                                                 allowHalfRating: false,
                                                 itemCount: 5,
-                                                itemSize: 55,
+                                                itemSize: 50,
                                                 itemPadding:
                                                     const EdgeInsets.symmetric(
                                                         horizontal: 3.5),
@@ -188,7 +188,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                             'كتابة تعليق',
                                             englishFontMedium,
                                             TextDirection.rtl),
-                                        const SizedBox(height: 40),
+                                         SizedBox(height: 40),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
