@@ -8,6 +8,7 @@ class MyStar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Row(
       children: [
         Icon(
@@ -47,16 +48,16 @@ class ImageProductProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     var size = MediaQuery.of(context).size;
     var height = size.height;
     var width = size.width;
-    print(width+height);
     return ClipRRect(
-        borderRadius: BorderRadius.circular(50),
+        borderRadius: BorderRadius.circular(15),
         child: Image.asset(
           image,
-          width: width*0.43,
-          height: height*0.3,
+          width:width*0.43 ,
+          height:width*0.45,
         ));
   }
 }

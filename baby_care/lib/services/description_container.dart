@@ -39,7 +39,7 @@ class _DescriptionContainerState extends State<DescriptionContainer> {
     var height = size.height;
     var width = size.width;
     return Padding(
-      padding: const EdgeInsets.only( right: 10, left: 10,bottom:10),
+      padding: const EdgeInsets.only(top:30, right: 10, left: 10),
       child: Obx(() {
         return Container(
           child: secondHalf.value == ''

@@ -40,7 +40,7 @@ class _ProductProfileState extends State<ProductProfile> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   ProductProfileTopIconsRow(),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 30),
                   ProductInfoRow(
                       title: widget.productTitle,
                       price: widget.productPrice,

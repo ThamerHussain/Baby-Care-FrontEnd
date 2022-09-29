@@ -73,7 +73,7 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                       ],
                     ),
                   ),
-                   SizedBox(height: 10),
+                   SizedBox(height: 40),
                   DoctorInfoRow(
                       doctorName: widget.doctorName,
                       doctorSpeciality: widget.doctorSpeciality,
