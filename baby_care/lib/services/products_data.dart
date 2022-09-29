@@ -256,7 +256,7 @@ List<List<String>> myOrdersData = [
   <String>['حفاظات بامبرز', '13,000', 'assets/images/1.jpg', '1'],
 ];
 
-// class ProducxtRating {
+// class ProductRating {
 //   final String comment;
 //   final double stars;
 //

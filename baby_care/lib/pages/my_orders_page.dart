@@ -56,8 +56,8 @@ class MyOrdersPage extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: myOrdersData
-                      .map<Padding>((List<String> product) => orderInfoRow(
-                          product[0], product[1], product[2], product[3]))
+                      .map<Padding>((List<String> product) =>
+                          orderInfoRow(product[0], product[1], product[2]))
                       .toList(),
                 ),
               ),

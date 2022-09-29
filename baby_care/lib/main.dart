@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -25,9 +24,12 @@ class MyApp extends StatelessWidget {
         navigatorObservers: [FlutterSmartDialog.observer],
         builder: FlutterSmartDialog.init(),
         debugShowCheckedModeBanner: false,
-        home: Obx((){return Scaffold(backgroundColor: blackColor.value, body:
-        // SplashPage()
-        MainPage()
-        );}));
+        home: Obx(() {
+          return Scaffold(
+              backgroundColor: blackColor.value,
+              body:
+                  // SplashPage()
+                  MainPage());
+        }));
   }
 }

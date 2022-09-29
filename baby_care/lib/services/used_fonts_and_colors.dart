@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 //used fonts 👇👇👇👇👇👇
@@ -58,6 +59,7 @@ final Rx<Color> shadedGrayColor =  Colors.grey.shade800.obs;
 final Rx<Color> userProfileCardColor =  const Color(0xff141414).obs;
 const Color grayColor = Colors.grey;
 const Color redColor = Colors.red;
+final Rx<Brightness> statusBarIconBrightness = Brightness.light.obs;
 //--------------------------------------------------------------------------------------------------
 changeTheme(){
   darkTheme.value = !darkTheme.value;
@@ -73,6 +75,7 @@ changeTheme(){
   chartWhite.value = darkTheme.value ? charts.MaterialPalette.white : charts.MaterialPalette.black;
   shadedGrayColor.value = darkTheme.value ? Colors.grey.shade800 : Colors.white;
   userProfileCardColor.value = darkTheme.value ? const Color(0xff141414) : Colors.black12;
+  darkTheme.value ? SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light) : SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
 }
 
 
