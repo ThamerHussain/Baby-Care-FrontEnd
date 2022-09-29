@@ -5,7 +5,7 @@ import 'my_text.dart';
 
 Padding listButton(title, icon, function) {
   return Padding(
-    padding: const EdgeInsets.only(bottom: 15.0),
+    padding: const EdgeInsets.only(bottom: 5.0),
     child: TextButton(
         style: ButtonStyle(
           shape: MaterialStateProperty.all<BeveledRectangleBorder>(
