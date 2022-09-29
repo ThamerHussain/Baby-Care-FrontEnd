@@ -56,13 +56,14 @@ class MyOrdersPage extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: myOrdersData
-                      .map<Padding>((List<String> product) =>
-                          orderInfoRow(product[0], product[1], product[2]))
+                      .map((List<String> product) => orderinfoRow(
+                          title: product[0].toString(),
+                          price: product[1].toString(),
+                          image: product[2].toString()))
                       .toList(),
                 ),
               ),
             ),
-            
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 15),
               child: TextButton(
@@ -76,8 +77,8 @@ class MyOrdersPage extends StatelessWidget {
                   Get.off(const SignInPage());
                 }),
                 child: Container(
-                  width: width*0.88,
-                  height: height*0.07,
+                  width: width * 0.88,
+                  height: height * 0.07,
                   decoration: BoxDecoration(
                       color: blueColor,
                       borderRadius: BorderRadius.circular(20)),

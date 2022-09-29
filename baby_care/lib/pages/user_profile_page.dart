@@ -59,7 +59,7 @@ class UserProfilePage extends StatelessWidget {
                 children: [
                   Center(
                     child: Container(
-                      height: height*0.43,
+                      height: width*0.93,
                       width: width,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),

@@ -84,7 +84,7 @@ class MainPage extends StatelessWidget {
                                                               color: whiteColor
                                                                   .value,
                                                               size: 40)),
-                                                   SizedBox(width: 125),
+                                                   SizedBox(width: 105),
                                                   Padding(
                                                     padding:
                                                         const EdgeInsets.only(
@@ -117,7 +117,7 @@ class MainPage extends StatelessWidget {
                                         child: Icon(Search.icon,
                                             color: whiteColor.value, size: 31),
                                       ),
-                                       SizedBox(width: 140),
+                                       SizedBox(width: 120),
                                       MyText(
                                           data: "Baby Care",
                                           font: englishFontBold,

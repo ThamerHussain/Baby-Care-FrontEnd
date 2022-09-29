@@ -34,6 +34,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
     var size = MediaQuery.of(context).size;
     var height = size.height;
     var width = size.width;
+    
     return Scaffold(body: Obx(() {
       return Container(
         width: width,
@@ -117,14 +118,14 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                               builder: (_) {
                                 return Container(
                                   width: double.maxFinite,
-                                  height: height*0.6,
+                                  height: width,
                                   decoration: BoxDecoration(
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(25)),
                                     color: shadedGrayColor.value,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(30.0),
+                                    padding:  EdgeInsets.only(top: 30,right:30,left: 30,bottom:20),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.end,
@@ -146,7 +147,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                                     .value),
                                           ],
                                         ),
-                                        const SizedBox(height: 40),
+                                        SizedBox(height: width*0.09),
                                         Obx(() {
                                           return Row(
                                             mainAxisAlignment:
@@ -181,14 +182,13 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                               )
                                             ],
                                           );
-                                        }),
-                                        const SizedBox(height: 40),
+                                        }),SizedBox(height:15,),
                                         tField(
                                             commentController,
                                             'كتابة تعليق',
                                             englishFontMedium,
                                             TextDirection.rtl),
-                                         SizedBox(height: 40),
+                                      
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -215,8 +215,8 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                                 // stars.refresh();
                                               }),
                                               child: Container(
-                                                height: 40,
-                                                width: 130,
+                                                height: width*0.1,
+                                                width: width*0.3,
                                                 alignment: Alignment.center,
                                                 child: MyText(
                                                     data: "نشر",
@@ -225,13 +225,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                                     color: whiteColor.value),
                                               ),
                                             ),
-                                            Container(
-                                              height: 25,
-                                              width: 1,
-                                              decoration: BoxDecoration(
-                                                  color: pointThreeWhiteColor
-                                                      .value),
-                                            ),
+                                            Container(width:1,height:40,color:pointEightFiveWhiteColor.value,),
                                             TextButton(
                                               style: ButtonStyle(
                                                 shape: MaterialStateProperty.all<
@@ -248,8 +242,8 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                                 // SmartDialog.showLoading();
                                               }),
                                               child: Container(
-                                                height: 40,
-                                                width: 130,
+                                                height: width*0.1,
+                                                width: width*0.3,
                                                 alignment: Alignment.center,
                                                 child: MyText(
                                                     data: "إلغاء",

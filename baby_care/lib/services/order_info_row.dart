@@ -5,10 +5,23 @@ import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-Padding orderInfoRow(title, String price, imagePath) {
-  RxInt quantity = 1.obs;
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 30),
+class orderinfoRow extends StatefulWidget {
+  const orderinfoRow({super.key, required this.title,  required this.price,required this.image, required });
+final String title,price,image;
+  @override
+  State<orderinfoRow> createState() => _orderinfoRowState();
+}
+
+class _orderinfoRowState extends State<orderinfoRow> {
+  @override
+  Widget build(BuildContext context) {
+
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
+    RxInt quantity = 1.obs;
+    return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 25),
     child: Obx(() {
       return Column(children: [
         Material(
@@ -17,9 +30,9 @@ Padding orderInfoRow(title, String price, imagePath) {
             splashColor: grayColor,
             onTap: (() {
               Get.to(ProductProfile(
-                  productTitle: title,
-                  productImage: imagePath,
-                  productPrice: price));
+                  productTitle: widget.title,
+                  productImage: widget.image,
+                  productPrice: widget.price));
             }),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -78,18 +91,20 @@ Padding orderInfoRow(title, String price, imagePath) {
                 );}
                 ),
                 const Spacer(),
+                
                 Column(
+                  
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     MyText(
-                        data: title,
+                        data: widget.title,
                         font: arabicFont700,
                         size: 15,
                         color: pointEightFiveWhiteColor.value),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 3, 5, 3),
                       child: MyText(
-                          data: '$price IQD',
+                          data: '${widget.price} IQD',
                           font: arabicFont700,
                           size: 15,
                           color: pointEightFiveWhiteColor.value),
@@ -108,9 +123,9 @@ Padding orderInfoRow(title, String price, imagePath) {
                   child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Image.asset(
-                        imagePath,
-                        width: 64,
-                        height: 64,
+                        widget.image,
+                        width:width*0.15 ,
+                        height: width*0.15,
                       )),
                 ),
               ],
@@ -121,7 +136,10 @@ Padding orderInfoRow(title, String price, imagePath) {
       ]);
     }),
   );
+  }
 }
+
+
 
 
 
