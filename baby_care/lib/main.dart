@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
                   // SplashPage()
                    MainPage());
               
+                  
         }));
   }
 }

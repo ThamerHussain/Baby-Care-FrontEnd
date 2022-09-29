@@ -45,6 +45,8 @@ dependencies:
   flutter_smart_dialog: ^4.5.5+2
   email_validator: ^2.1.17
   form_validator: ^1.0.2
+  whatsapp: ^1.0.6
+  flutter_phone_direct_caller: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -134,7 +136,3 @@ flutter:
      - family: Mt
        fonts:
          - asset: assets/fonts/theme_icons.ttf
-
-#     - family: x
-#       fonts:
-#         - asset: assets/fonts/user_profile_icon.ttf

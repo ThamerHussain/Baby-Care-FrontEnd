@@ -4,7 +4,8 @@ import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-Padding orderInfoRow(title, String price, imagePath, quantity) {
+Padding orderInfoRow(title, String price, imagePath) {
+  RxInt quantity = 1.obs;
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 30),
     child: Obx(() {
@@ -23,8 +24,8 @@ Padding orderInfoRow(title, String price, imagePath, quantity) {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                Obx((){return
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     TextButton(
                         style: ButtonStyle(
@@ -34,7 +35,10 @@ Padding orderInfoRow(title, String price, imagePath, quantity) {
                             borderRadius: BorderRadius.circular(10),
                           )),
                         ),
-                        onPressed: (() {}),
+                        onPressed: (() {
+                          quantity += 1;
+                          quantity.toString();
+                        }),
                         child: Container(
                           width: 51,
                           height: 20,
@@ -53,9 +57,14 @@ Padding orderInfoRow(title, String price, imagePath, quantity) {
                             borderRadius: BorderRadius.circular(10),
                           )),
                         ),
-                        onPressed: (() {}),
+                        onPressed: (() {
+                          if(quantity>0){
+                            quantity -= 1;
+                            quantity.toString();
+                          }
+                          }),
                         child: Container(
-                          width: 51,
+                          width: 31,//51,
                           height: 20,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
@@ -65,6 +74,7 @@ Padding orderInfoRow(title, String price, imagePath, quantity) {
                                   color: pointNineWhiteColor.value, size: 20)),
                         )),
                   ],
+                );}
                 ),
                 const Spacer(),
                 Column(

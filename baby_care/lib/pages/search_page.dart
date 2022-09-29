@@ -57,6 +57,9 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Scaffold(body: Obx(() {
       return Container(
           color: blackColor.value,
