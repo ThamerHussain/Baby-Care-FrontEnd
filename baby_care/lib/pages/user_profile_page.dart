@@ -98,7 +98,7 @@ class UserProfilePage extends StatelessWidget {
                     right: 0,
                     child: Center(
                       child: Container(
-                        width: width*0.33,
+                        width: width*0.31,
                         height: height*0.15,
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(
@@ -128,7 +128,7 @@ class UserProfilePage extends StatelessWidget {
                   }),
                   child: Container(
                     width: width*0.9,
-                    height: width*0.17,
+                    height: width*0.14,
                     decoration: BoxDecoration(
                         color: blueColor,
                         borderRadius: BorderRadius.circular(20)),

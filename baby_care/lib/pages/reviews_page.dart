@@ -118,7 +118,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                               builder: (_) {
                                 return Container(
                                   width: double.maxFinite,
-                                  height: width,
+                                  height: width*1.1,
                                   decoration: BoxDecoration(
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(25)),
