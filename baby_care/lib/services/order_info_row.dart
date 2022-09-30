@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class orderinfoRow extends StatefulWidget {
-  const orderinfoRow({super.key, required this.title,  required this.price,required this.image, required });
-final String title,price,image;
+  const orderinfoRow({super.key, required this.title,  required this.price,required this.image, required, required this.discrption });
+final String title,price,image,discrption;
   @override
   State<orderinfoRow> createState() => _orderinfoRowState();
 }
@@ -32,7 +32,9 @@ class _orderinfoRowState extends State<orderinfoRow> {
               Get.to(ProductProfile(
                   productTitle: widget.title,
                   productImage: widget.image,
-                  productPrice: widget.price));
+                  productPrice: widget.price,
+                  discrption: widget.discrption,
+                  ));
             }),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'used_fonts_and_colors.dart';
 import 'my_text.dart';
 
-Padding productInfoRow(title, String price, imagePath) {
+Padding productInfoRow(title, String price, imagePath,discrption) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 30),
     child: Column(children: [
@@ -18,7 +18,9 @@ Padding productInfoRow(title, String price, imagePath) {
               Get.to(ProductProfile(
                   productTitle: title,
                   productImage: imagePath,
-                  productPrice: price));
+                  productPrice: price,
+                  discrption: discrption
+                ,));
             }),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -90,8 +92,8 @@ Padding productInfoRow(title, String price, imagePath) {
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Image.asset(
                         imagePath,
-                        width: 64,
-                        height: 64,
+                        width: 60,
+                        height: 60,
                       )),
                 ),
               ],

@@ -131,7 +131,7 @@ class SearchPage extends StatelessWidget {
                                             if (product[0].contains(
                                                 searchString.value)) ...[
                                               productInfoRow(product[0],
-                                                  product[1], product[2]),
+                                                  product[1], product[2],product[3]),
                                             ]
                                         ]
                                       : [
@@ -140,7 +140,7 @@ class SearchPage extends StatelessWidget {
                                             if (doctor[0].contains(
                                                 searchString.value)) ...[
                                               doctorInfoRow(doctor[0],
-                                                  doctor[1], doctor[2]),
+                                                  doctor[1], doctor[2],doctor[3]),
                                             ]
                                         ]
                                   : []);

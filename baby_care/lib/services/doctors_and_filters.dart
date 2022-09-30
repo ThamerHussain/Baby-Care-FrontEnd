@@ -42,7 +42,7 @@ Expanded filtersAndDoctorsColumn() {
             child: Column(
               children: doctorsAndFilters.value[0]
                   .map<Padding>((List<String> product) =>
-                      doctorInfoRow(product[0], product[1], product[2]))
+                      doctorInfoRow(product[0], product[1], product[2],product[3]))
                   .toList(),
             ),
           ),

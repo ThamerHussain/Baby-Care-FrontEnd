@@ -59,7 +59,7 @@ class MyOrdersPage extends StatelessWidget {
                       .map((List<String> product) => orderinfoRow(
                           title: product[0].toString(),
                           price: product[1].toString(),
-                          image: product[2].toString()))
+                          image: product[2].toString(),discrption:product[3],))
                       .toList(),
                 ),
               ),
