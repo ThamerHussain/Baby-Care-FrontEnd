@@ -37,7 +37,7 @@ Obx filtersAndItemsColumn() {
               child: Column(
                 children: productsAndFilters.value[0]
                     .map<Padding>((List<String> product) =>
-                        productInfoRow(product[0], product[1], product[2]))
+                        productInfoRow(product[0], product[1], product[2],product[3]))
                     .toList(),
               ),
             ),

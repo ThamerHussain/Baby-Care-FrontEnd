@@ -3,7 +3,7 @@ List<List<String>> clothesFilterData = <List<String>>[
     'الصنف',
     'تيشيرتات',
     'بجامات',
-    'لباسات',
+    'ملابس داخلية',
   ],
   <String>[
     'القياس',

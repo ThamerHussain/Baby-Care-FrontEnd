@@ -49,7 +49,7 @@ class MainPage extends StatelessWidget {
                       return Container(
                           child: isListPage.value
                               ? Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                       Padding(
                                         padding: const EdgeInsets.only(top: 30),
@@ -61,6 +61,7 @@ class MainPage extends StatelessWidget {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.end,
                                                 children: [
+                                                  SizedBox(width:width*0.04),
                                                   TextButton(
                                                       style: ButtonStyle(
                                                         shape: MaterialStateProperty.all<
@@ -84,7 +85,7 @@ class MainPage extends StatelessWidget {
                                                               color: whiteColor
                                                                   .value,
                                                               size: 40)),
-                                                  const SizedBox(width: 145),
+                                                   SizedBox(width:width*0.32),
                                                   Padding(
                                                     padding:
                                                         const EdgeInsets.only(
@@ -117,7 +118,7 @@ class MainPage extends StatelessWidget {
                                         child: Icon(Search.icon,
                                             color: whiteColor.value, size: 31),
                                       ),
-                                      const SizedBox(width: 160),
+                                       SizedBox(width: 140),
                                       MyText(
                                           data: "Baby Care",
                                           font: englishFontBold,
@@ -191,6 +192,7 @@ class MainPage extends StatelessWidget {
                 ),
                 Container(
                   color: blackColor.value,
+
                   height: height*0.13,//78,
                   width: width,//double.maxFinite,
                   child: Padding(

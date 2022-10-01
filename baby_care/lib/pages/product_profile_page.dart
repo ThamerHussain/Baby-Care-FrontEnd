@@ -14,9 +14,9 @@ class ProductProfile extends StatefulWidget {
       {super.key,
       required this.productTitle,
       required this.productImage,
-      required this.productPrice});
+      required this.productPrice, required this.discrption});
 
-  final String productTitle, productImage, productPrice;
+  final String productTitle, productImage, productPrice,discrption;
 
   @override
   State<ProductProfile> createState() => _ProductProfileState();
@@ -40,7 +40,7 @@ class _ProductProfileState extends State<ProductProfile> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   ProductProfileTopIconsRow(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 30),
                   ProductInfoRow(
                       title: widget.productTitle,
                       price: widget.productPrice,
@@ -48,9 +48,9 @@ class _ProductProfileState extends State<ProductProfile> {
                   Expanded(
                       child: SingleChildScrollView(
                           child: DescriptionContainer(
-                              text: moeText, title: 'الشرح'))),
+                              text: widget.discrption, title: 'الشرح'))),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 100),
+                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 90),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

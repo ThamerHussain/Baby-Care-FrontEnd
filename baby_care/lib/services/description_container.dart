@@ -34,15 +34,20 @@ class _DescriptionContainerState extends State<DescriptionContainer> {
 
   @override
   Widget build(BuildContext context) {
+
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return Padding(
-      padding: const EdgeInsets.only(top: 35, right: 10, left: 10),
+      padding: const EdgeInsets.only(top:30, right: 10, left: 10),
       child: Obx(() {
         return Container(
           child: secondHalf.value == ''
               ? Text(widget.text,
                   style: TextStyle(
                       color: pointEightFiveWhiteColor.value,
-                      fontSize: 15,//17,
+
+                      fontSize: 15,
                       fontFamily: arabicFont400),
                   textDirection: TextDirection.rtl)
               : Obx(() {
@@ -78,7 +83,8 @@ class _DescriptionContainerState extends State<DescriptionContainer> {
                       Text(flag.value ? '$firstHalf...' : widget.text,
                           style: TextStyle(
                               color: pointEightFiveWhiteColor.value,
-                              fontSize: 15.5,//17,
+
+                              fontSize: 15.5,
                               fontFamily: arabicFont400),
                           textDirection: TextDirection.rtl)
                     ],
