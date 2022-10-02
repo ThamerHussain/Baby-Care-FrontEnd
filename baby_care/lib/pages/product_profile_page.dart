@@ -39,8 +39,8 @@ class _ProductProfileState extends State<ProductProfile> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ProductProfileTopIconsRow(),
-                  const SizedBox(height: 40),
+                  ProductProfileTopIconsRow(productTitle: widget.productTitle),
+                  const SizedBox(height: 30),//40),
                   ProductInfoRow(
                       title: widget.productTitle,
                       price: widget.productPrice,
@@ -50,7 +50,7 @@ class _ProductProfileState extends State<ProductProfile> {
                           child: DescriptionContainer(
                               text: moeText, title: 'الشرح'))),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 100),
+                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 90),//100),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

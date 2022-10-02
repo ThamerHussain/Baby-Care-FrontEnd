@@ -59,8 +59,10 @@ class UserProfilePage extends StatelessWidget {
                 children: [
                   Center(
                     child: Container(
-                      height: 350,
-                      width: 350,
+                      // height: 350,
+                      // width: 350,
+                      height: width * 0.93,
+                      width: width,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),
                         color: userProfileCardColor.value,
@@ -98,14 +100,17 @@ class UserProfilePage extends StatelessWidget {
                     right: 0,
                     child: Center(
                       child: Container(
-                        width: 120,
-                        height: 120,
+                        // width: 120,
+                        // height: 120,
+                        width: width * 0.31,
+                        height: height * 0.15,
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(60),
                           ),
                           image: DecorationImage(
-                            image: AssetImage('assets/images/2.jpg'),
+                            image: AssetImage('assets/images/'
+                                '2.jpg'),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -127,8 +132,10 @@ class UserProfilePage extends StatelessWidget {
                     Get.off(const SignInPage());
                   }),
                   child: Container(
-                    width: 320,
-                    height: 55,
+                    // width: 320,
+                    // height: 55,
+                    width: width * 0.9,
+                    height: width * 0.14,
                     decoration: BoxDecoration(
                         color: blueColor,
                         borderRadius: BorderRadius.circular(20)),

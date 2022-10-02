@@ -73,7 +73,7 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 40),//20),
                   DoctorInfoRow(
                       doctorName: widget.doctorName,
                       doctorSpeciality: widget.doctorSpeciality,
@@ -95,7 +95,7 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                               size: 25,
                               color: whiteColor.value),
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 10),//20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [

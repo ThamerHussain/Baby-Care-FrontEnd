@@ -69,7 +69,7 @@ class ProductInfoRow extends StatelessWidget {
                   )
                 ]),
           ),
-          const SizedBox(width: 20),
+          const SizedBox(width: 10),//20),
           ImageProductProfile(image: imageFromUser)
         ],
       ),

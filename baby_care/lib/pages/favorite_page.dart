@@ -1,16 +1,19 @@
-import 'package:baby_care/services/filters_and_items_column.dart';
+import 'package:baby_care/services/filters_and_products_column.dart';
 import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/services/product_info_row.dart';
+import 'package:baby_care/services/products_data.dart';
+import 'package:baby_care/services/requests.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
+final RxList<Map<dynamic, dynamic>> favoriteData = favoriteTProducts.obs;
 class FavoritePage extends StatelessWidget {
   const FavoritePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    getFavorite();
     var size = MediaQuery.of(context).size;
     var height = size.height;
     var width = size.width;
@@ -56,9 +59,15 @@ class FavoritePage extends StatelessWidget {
               return Expanded(
                 child: SingleChildScrollView(
                   child: Column(
-                    children: productsAndFilters.value[0]
-                        .map<Padding>((List<String> product) =>
-                            productInfoRow(product[0], product[1], product[2]))
+                    children: favoriteData
+
+                        .map<Padding>((Map<dynamic, dynamic> product) =>
+                            productInfoRow(
+                        product.values.elementAt(0)['name'],
+                      product.values.elementAt(0)['price'],
+                      'assets/images/2.jpg',
+                      product.values.elementAt(0)['stars']
+                    ))
                         .toList(),
                   ),
                 ),

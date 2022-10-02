@@ -1,3 +1,4 @@
+import 'package:baby_care/services/requests.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'used_fonts_and_colors.dart';
@@ -22,11 +23,13 @@ Obx buttomButton(IconData icon, title, buttonNumber, RxBool isDoctorPage,
           selectedButton.value = buttonNumber;
           if (buttonNumber == 1) {
             isProductPage.value = true;
+            getSuggestedProducts();
             isListPage.value = false;
           }
           if (buttonNumber == 2) {
             isProductPage.value = false;
             isDoctorPage.value = true;
+            getDoctors();
             isListPage.value = false;
           }
           if (buttonNumber == 3) {

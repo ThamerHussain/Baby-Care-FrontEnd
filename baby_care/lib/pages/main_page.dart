@@ -5,8 +5,8 @@ import 'package:baby_care/pages/search_page.dart';
 import 'package:baby_care/pages/sign_in_page.dart';
 import 'package:baby_care/pages/user_profile_page.dart';
 import 'package:baby_care/services/category_button.dart';
-import 'package:baby_care/services/doctors_and_filters.dart';
-import 'package:baby_care/services/filters_and_items_column.dart';
+import 'package:baby_care/services/filters_and_doctors_column.dart';
+import 'package:baby_care/services/filters_and_products_column.dart';
 import 'package:baby_care/services/list_button.dart';
 import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
@@ -17,17 +17,33 @@ import '../icons/buttom_icons.dart';
 import '../icons/theme_icons.dart';
 import '../icons/user_icon.dart';
 import '../services/buttom_button.dart';
+import '../services/requests.dart';
 
 RxBool isProductPage = true.obs;
 RxBool isDoctorPage = false.obs;
 RxBool isListPage = false.obs;
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   MainPage({Key? key}) : super(key: key);
+
+  @override
+  State<MainPage> createState() => MainPageState();
+}
+
+class MainPageState extends State<MainPage> {
   final emailController = TextEditingController();
+
   final passwordController = TextEditingController();
+
   final nameController = TextEditingController();
+
   final familyNameController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    getSuggestedProducts();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +65,8 @@ class MainPage extends StatelessWidget {
                       return Container(
                           child: isListPage.value
                               ? Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.start, //end,
                                   children: [
                                       Padding(
                                         padding: const EdgeInsets.only(top: 30),
@@ -61,6 +78,7 @@ class MainPage extends StatelessWidget {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.end,
                                                 children: [
+                                                  SizedBox(width: width * 0.04),
                                                   TextButton(
                                                       style: ButtonStyle(
                                                         shape: MaterialStateProperty.all<
@@ -84,7 +102,8 @@ class MainPage extends StatelessWidget {
                                                               color: whiteColor
                                                                   .value,
                                                               size: 40)),
-                                                  const SizedBox(width: 145),
+                                                  SizedBox(width: width * 0.32),
+                                                  // 125),//145),
                                                   Padding(
                                                     padding:
                                                         const EdgeInsets.only(
@@ -113,11 +132,13 @@ class MainPage extends StatelessWidget {
                                                 BorderRadius.circular(10),
                                           )),
                                         ),
-                                        onPressed: (() => Get.to(SearchPage())),
+                                        onPressed: (() => Get.to(SearchPage())
+                                            // {}
+                                            ),
                                         child: Icon(Search.icon,
                                             color: whiteColor.value, size: 31),
                                       ),
-                                      const SizedBox(width: 160),
+                                      const SizedBox(width: 140), //160),
                                       MyText(
                                           data: "Baby Care",
                                           font: englishFontBold,
@@ -131,8 +152,8 @@ class MainPage extends StatelessWidget {
                             children: isProductPage.value
                                 ? ([
                                     Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          0, 10, 15, 5),
+                                      padding:
+                                          EdgeInsets.fromLTRB(0, 10, 15, 5),
                                       child: SingleChildScrollView(
                                         scrollDirection: Axis.horizontal,
                                         reverse: true,
@@ -140,7 +161,22 @@ class MainPage extends StatelessWidget {
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
                                           children: [
-                                            categoryButton('مفروشات', 10),
+                                            // CategoryButton(text: 'مفروشات',categoryNumber:  10, ),
+                                            // CategoryButton(text: 'حاضنات',categoryNumber:  9),
+                                            // CategoryButton(text: 'مركبات',categoryNumber:  8),
+                                            // CategoryButton(text: 'أحذية',categoryNumber:  7),
+                                            // CategoryButton(
+                                            //     text: 'أدوات الإستحمام',categoryNumber:  6),
+                                            // CategoryButton(text: 'أدوات الطعام',categoryNumber:  5),
+                                            // CategoryButton(text: 'أطعمة',categoryNumber:  4),
+                                            // CategoryButton(text: 'حفاظات',categoryNumber:  3),
+                                            // CategoryButton(text: 'ملابس',categoryNumber: 2),
+                                            // CategoryButton(text: 'مقترحات',categoryNumber:  1),
+                                            //
+                                            categoryButton(
+                                              'مفروشات',
+                                              10,
+                                            ),
                                             categoryButton('حاضنات', 9),
                                             categoryButton('مركبات', 8),
                                             categoryButton('أحذية', 7),
@@ -155,7 +191,9 @@ class MainPage extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    filtersAndItemsColumn(),
+                                    // Obx((){return
+                                    filtersAndItemsColumn()
+                                    // ;}),
                                   ])
                                 : isDoctorPage.value
                                     ? ([
@@ -166,47 +204,50 @@ class MainPage extends StatelessWidget {
                                           children: [
                                             const SizedBox(height: 35),
                                             listButton('مشترياتي', ls.cart, () {
-                                              Get.to(const MyOrdersPage());
+                                              Get.to(
+                                                  () => const MyOrdersPage());
                                             }),
                                             listButton('المفضلة', ls.heart, () {
-                                              Get.to(const FavoritePage());
+                                              Get.to(
+                                                  () => const FavoritePage());
                                             }),
                                             listButton(
                                                 'الملف الشخصي', UserIcon.icon,
                                                 () {
-                                              Get.to(const UserProfilePage());
+                                              Get.to(() =>
+                                                  const UserProfilePage());
                                             }),
                                             listButton('مركز المساعدة',
                                                 ls.call_center, () {}),
                                             listButton('تسجيل الخروج', ls.out,
                                                 () {
-                                              Get.to(const SignInPage());
+                                              Get.to(() => const SignInPage());
                                             }),
                                           ],
                                         ),
                                       ])),
                       );
                     }),
-                  ],
-                ),
-                Container(
-                  color: blackColor.value,
-                  height: height*0.13,//78,
-                  width: width,//double.maxFinite,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 2),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        buttomButton(buttomIcons.threeLines, 'القائمة', 3,
-                            isDoctorPage, isProductPage, isListPage),
-                        buttomButton(buttomIcons.doctor, 'الأطباء', 2,
-                            isDoctorPage, isProductPage, isListPage),
-                        buttomButton(buttomIcons.basket, 'التسوق', 1,
-                            isDoctorPage, isProductPage, isListPage),
-                      ],
+                    Container(
+                      color: blackColor.value,
+                      height: height * 0.13, //78,
+                      width: width, //double.maxFinite,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            buttomButton(buttomIcons.threeLines, 'القائمة', 3,
+                                isDoctorPage, isProductPage, isListPage),
+                            buttomButton(buttomIcons.doctor, 'الأطباء', 2,
+                                isDoctorPage, isProductPage, isListPage),
+                            buttomButton(buttomIcons.basket, 'التسوق', 1,
+                                isDoctorPage, isProductPage, isListPage),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),

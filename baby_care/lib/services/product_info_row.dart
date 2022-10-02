@@ -1,11 +1,13 @@
 import 'package:baby_care/pages/product_profile_page.dart';
+import 'package:baby_care/services/requests.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'used_fonts_and_colors.dart';
 import 'my_text.dart';
 
-Padding productInfoRow(title, String price, imagePath) {
+Padding productInfoRow(title, String price, imagePath, int stars) {
+  // print('$title, String $price, $imagePath, int $stars');
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 30),
     child: Column(children: [
@@ -15,7 +17,11 @@ Padding productInfoRow(title, String price, imagePath) {
           child: InkWell(
             splashColor: grayColor,
             onTap: (() {
-              Get.to(ProductProfile(
+              // getProduct(id: 1);
+
+              Get.to(
+
+                  ProductProfile(
                   productTitle: title,
                   productImage: imagePath,
                   productPrice: price));
@@ -31,7 +37,8 @@ Padding productInfoRow(title, String price, imagePath) {
                         borderRadius: BorderRadius.circular(10),
                       )),
                     ),
-                    onPressed: (() {}),
+                    onPressed: (() =>
+                      addToCart(title)),
                     child: Container(
                       width: 51,
                       height: 20,
@@ -64,14 +71,17 @@ Padding productInfoRow(title, String price, imagePath) {
                       ],
                     ),
                     RatingBar.builder(
-                      initialRating: 3,
+                      initialRating: stars.toDouble(),
                       minRating: 1,
                       direction: Axis.horizontal,
-                      allowHalfRating: true,
+                      allowHalfRating: false,
                       itemCount: 5,
                       itemSize: 20,
+                      textDirection: TextDirection.rtl,
+                      ignoreGestures: true,
                       itemPadding: const EdgeInsets.symmetric(horizontal: 0.0),
                       itemBuilder: (context, _) => Icon(
+
                         Icons.star_rounded,
                         color: pointEightFiveWhiteColor.value,
                       ),
@@ -90,8 +100,10 @@ Padding productInfoRow(title, String price, imagePath) {
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       child: Image.asset(
                         imagePath,
-                        width: 64,
-                        height: 64,
+                        // width: 64,
+                        // height: 64,
+                        width: 60,
+                        height: 60,
                       )),
                 ),
               ],
