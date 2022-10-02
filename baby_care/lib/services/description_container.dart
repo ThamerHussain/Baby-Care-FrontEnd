@@ -43,13 +43,40 @@ class _DescriptionContainerState extends State<DescriptionContainer> {
       child: Obx(() {
         return Container(
           child: secondHalf.value == ''
-              ? Text(widget.text,
-                  style: TextStyle(
-                      color: pointEightFiveWhiteColor.value,
+              ? Column(crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Row(
+                    children: [InkWell(
+                              onTap: (() {
+                                flag.value = !flag.value;
+                              }),
+                              child: flag.value
+                                  ? Icon(
+                                      Icons.keyboard_arrow_down_sharp,
+                                      size: 35,
+                                      color: whiteColor.value,
+                                    )
+                                  : Icon(
+                                      Icons.keyboard_arrow_up,
+                                      size: 35,
+                                      color: whiteColor.value,
+                                    )),
+                          const Spacer(),MyText(
+                              data: widget.title,
+                              font: arabicFont700,
+                              size: 25,
+                              color: whiteColor.value)
+                    ],
+                    
+                  ),SizedBox(height:10,),Text(widget.text,
+                          style: TextStyle(
+                              color: pointEightFiveWhiteColor.value,
 
-                      fontSize: 15,
-                      fontFamily: arabicFont400),
-                  textDirection: TextDirection.rtl)
+                              fontSize: 15,
+                              fontFamily: arabicFont400),
+                          textDirection: TextDirection.rtl),
+                ],
+              )
               : Obx(() {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -5,7 +5,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'filter_button.dart';
 import 'product_info_row.dart';
 
-final RxList productsAndFilters = [diapersProducts, null].obs;
+final RxList productsAndFilters = [suggestionsProducts, null].obs;
 
 Obx filtersAndItemsColumn() {
   return Obx(() {

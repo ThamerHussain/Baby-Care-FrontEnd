@@ -188,9 +188,7 @@ class MainPage extends StatelessWidget {
                                       ])),
                       );
                     }),
-                  ],
-                ),
-                Container(
+                  Container(
                   color: blackColor.value,
 
                   height: height*0.13,//78,
@@ -209,7 +207,9 @@ class MainPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                ), ],
                 ),
+               
               ],
             ),
           ),
