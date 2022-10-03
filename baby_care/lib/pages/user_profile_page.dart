@@ -61,14 +61,14 @@ class UserProfilePage extends StatelessWidget {
                     child: Container(
                       // height: 350,
                       // width: 350,
-                      height: width * 0.93,
+                      height: width * 1.09,
                       width: width,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),
                         color: userProfileCardColor.value,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(top: 80),
+                        padding: const EdgeInsets.only(top: 70, right: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
@@ -120,7 +120,7 @@ class UserProfilePage extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 100),
+                padding: const EdgeInsets.only(top: 15),
                 child: TextButton(
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<BeveledRectangleBorder>(

@@ -19,7 +19,7 @@ Expanded filtersAndDoctorsColumn() {
         SizedBox(
           width: double.maxFinite,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 0, 45, 25),
+            padding: const EdgeInsets.fromLTRB(0, 0, 30, 25),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               reverse: true,
@@ -56,7 +56,11 @@ Expanded filtersAndDoctorsColumn() {
                             doctorInfoRow(
                                 product.values.elementAt(0),
                                 product.values.elementAt(1),
-                                'assets/images/2.jpg'))
+                                product.values.elementAt(2),
+                                product.values.elementAt(3),
+                                // 'assets/images/3.jpg'
+                            )
+                    )
                         .toList(),
               );
             }),

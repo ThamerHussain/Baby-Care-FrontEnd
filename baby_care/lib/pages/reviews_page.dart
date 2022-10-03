@@ -84,11 +84,26 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                   font: arabicFont700,
                                   size: 35,
                                   color: pointEightFiveWhiteColor.value),
-                              Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: const [
-                                    MyStar(size: 35),
-                                  ]),
+                              RatingBar.builder(
+                                initialRating: 4,
+                                minRating: 1,
+                                direction: Axis.horizontal,
+                                allowHalfRating: false,
+                                itemCount: 5,
+                                itemSize: 30,
+                                textDirection: TextDirection.rtl,
+                                ignoreGestures: true,
+                                itemPadding: const EdgeInsets.symmetric(horizontal: 0.0),
+                                itemBuilder: (context, _) => Icon(
+
+                                  Icons.star_rounded,
+                                  color: pointEightFiveWhiteColor.value,
+                                ),
+                                unratedColor: pointThreeWhiteColor.value,
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              ),
                             ],
                           ),
                         ],
@@ -101,7 +116,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                     // ; })
                     ,
 
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 0),
                     TextButton(
                         style: ButtonStyle(
                           shape:
@@ -165,7 +180,7 @@ class _ProductReviewPageState extends State<ProductReviewPage> {
                                                 allowHalfRating: false,
                                                 itemCount: 5,
                                                 // itemSize: 55,
-                                                itemSize: 50,
+                                                itemSize: 45,
                                                 itemPadding:
                                                     const EdgeInsets.symmetric(
                                                         horizontal: 3.5),

@@ -5,9 +5,10 @@ import 'package:baby_care/services/products_data.dart';
 import 'package:baby_care/services/requests.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get/get.dart';
 
-final RxList<Map<dynamic, dynamic>> cartData = favoriteTProducts.obs;
+final RxList<Map<dynamic, dynamic>> cartData = cartProducts.obs;
 
 class MyOrdersPage extends StatelessWidget {
   const MyOrdersPage({Key? key}) : super(key: key);
@@ -63,7 +64,9 @@ class MyOrdersPage extends StatelessWidget {
                           orderInfoRow(
                               product.values.elementAt(0)['name'],
                               product.values.elementAt(0)['price'],
-                              'assets/images/2.jpg',
+                              product.values.elementAt(0)['image_url'],
+                              product.values.elementAt(0)['description'],
+                              // 'assets/images/2.jpg',
                               product['item_qty'],
                             context
                           ))
@@ -83,6 +86,7 @@ class MyOrdersPage extends StatelessWidget {
                 ),
                 onPressed: (() {
                   // Get.off(const SignInPage());
+                  FlutterPhoneDirectCaller.callNumber('07818115142');
                 }),
                 child: Container(
                   // width: 320,

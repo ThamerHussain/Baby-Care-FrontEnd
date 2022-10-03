@@ -1442,8 +1442,10 @@ void getFurnitureMattressProducts() async {
 
 void getDoctors() async {
   try {
+    // print('111111111111111111111111111');
     Response res = await Dio()
         .get('${baseURL}display all doctor');
+    // print(res.data);
     List<Map<dynamic, dynamic>> data = List<Map<dynamic, dynamic>>.from(res.data);
     doctorsData.value = data;
     dataItemsForSearch.value = data;

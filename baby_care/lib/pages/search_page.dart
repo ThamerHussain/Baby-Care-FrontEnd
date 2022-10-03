@@ -137,8 +137,11 @@ class SearchPage extends StatelessWidget {
 
                           product.values.elementAt(0),
                           product.values.elementAt(1),
-                          'assets/images/2.jpg',
-                          product.values.elementAt(3)
+                          product.values.elementAt(2),
+                          // 'assets/images/2.jpg',
+                          product.values.elementAt(3),
+                          product.values.elementAt(4),
+
 
 
                                               ),
@@ -150,7 +153,7 @@ class SearchPage extends StatelessWidget {
                                             if (doctor.values.elementAt(0).contains(
                                                 searchString.value)) ...[
                                               doctorInfoRow(doctor.values.elementAt(0),
-                                                  doctor.values.elementAt(1), doctor.values.elementAt(2)),
+                                                  doctor.values.elementAt(1), doctor.values.elementAt(2), doctor.values.elementAt(3)),
                                             ]
                                         ]
                                   : []);

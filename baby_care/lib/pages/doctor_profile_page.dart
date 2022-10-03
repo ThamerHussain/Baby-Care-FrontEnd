@@ -13,9 +13,11 @@ class DoctorProfilePage extends StatefulWidget {
       {super.key,
       required this.doctorName,
       required this.doctorImage,
-      required this.doctorSpeciality});
+      required this.doctorSpeciality,
+      required this.description
+      });
 
-  final String doctorName, doctorImage, doctorSpeciality;
+  final String doctorName, doctorImage, doctorSpeciality, description;
 
   @override
   State<DoctorProfilePage> createState() => _DoctorProfilePageState();
@@ -73,7 +75,7 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 40),//20),
+                  const SizedBox(height: 20),//20),
                   DoctorInfoRow(
                       doctorName: widget.doctorName,
                       doctorSpeciality: widget.doctorSpeciality,
@@ -81,7 +83,7 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                   Expanded(
                       child: SingleChildScrollView(
                           child: DescriptionContainer(
-                              title: "السيرة الذاتية", text: moeText))),
+                              title: "السيرة الذاتية", text: widget.description))),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Column(

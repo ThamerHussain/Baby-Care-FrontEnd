@@ -1,6 +1,7 @@
 import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'models_moe.dart';
 
@@ -9,15 +10,18 @@ class ProductInfoRow extends StatelessWidget {
       {super.key,
       required this.imageFromUser,
       required this.title,
-      required this.price});
+      required this.price,
+      required this.stars});
 
   final String imageFromUser, title, price;
+  final int stars;
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var height = size.height;
     var width = size.width;
+    print('$imageFromUser..................................................................');
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
@@ -32,7 +36,7 @@ class ProductInfoRow extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
                       child: Obx(() {
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,11 +61,28 @@ class ProductInfoRow extends StatelessWidget {
                                 font: englishFontMedium,
                                 size: 20,
                                 color: whiteColor.value),
-                            const SizedBox(height: 10),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: const [MyStar(size: 23)],
-                            )
+                            const SizedBox(height: 0),
+                            RatingBar.builder(
+                              initialRating: 4,
+
+                              minRating: 1,
+                              direction: Axis.horizontal,
+                              allowHalfRating: false,
+                              itemCount: 5,
+                              itemSize: 23,
+                              textDirection: TextDirection.rtl,
+                              ignoreGestures: true,
+                              itemPadding: const EdgeInsets.symmetric(horizontal: 0.0),
+                              itemBuilder: (context, _) => Icon(
+
+                                Icons.star_rounded,
+                                color: pointEightFiveWhiteColor.value,
+                              ),
+                              unratedColor: pointThreeWhiteColor.value,
+                              onRatingUpdate: (rating) {
+                                print(rating);
+                              },
+                            ),
                           ],
                         );
                       }),
@@ -69,7 +90,7 @@ class ProductInfoRow extends StatelessWidget {
                   )
                 ]),
           ),
-          const SizedBox(width: 10),//20),
+          const SizedBox(width: 10), //20),
           ImageProductProfile(image: imageFromUser)
         ],
       ),

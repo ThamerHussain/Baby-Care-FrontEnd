@@ -6,10 +6,11 @@ import 'package:get/get.dart';
 import 'used_fonts_and_colors.dart';
 import 'my_text.dart';
 
-Padding productInfoRow(title, String price, imagePath, int stars) {
+Padding productInfoRow(title, String price, imagePath, int stars, description) {
   // print('$title, String $price, $imagePath, int $stars');
+  imagePath = imagePath.replaceFirst('/static/', 'https://thamer.pythonanywhere.com/static/');
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 30),
+    padding: const EdgeInsets.symmetric(horizontal: 10),
     child: Column(children: [
       Obx(() {
         return Material(
@@ -24,7 +25,7 @@ Padding productInfoRow(title, String price, imagePath, int stars) {
                   ProductProfile(
                   productTitle: title,
                   productImage: imagePath,
-                  productPrice: price));
+                  productPrice: price, stars: stars, description: description));
             }),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -98,12 +99,12 @@ Padding productInfoRow(title, String price, imagePath, int stars) {
                   width: 64,
                   child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
-                      child: Image.asset(
+                      child: Image.network(
                         imagePath,
-                        // width: 64,
-                        // height: 64,
-                        width: 60,
-                        height: 60,
+                        width: 64,
+                        height: 64,
+                        // width: 60,
+                        // height: 60,
                       )),
                 ),
               ],

@@ -11,6 +11,7 @@ import 'package:baby_care/services/list_button.dart';
 import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get/get.dart';
 import '../icons/search_icon.dart';
 import '../icons/buttom_icons.dart';
@@ -102,7 +103,8 @@ class MainPageState extends State<MainPage> {
                                                               color: whiteColor
                                                                   .value,
                                                               size: 40)),
-                                                  SizedBox(width: width * 0.32),
+                                                  SizedBox(width: width * 0.21),
+                                                  // SizedBox(width: width * 0.32),
                                                   // 125),//145),
                                                   Padding(
                                                     padding:
@@ -138,7 +140,7 @@ class MainPageState extends State<MainPage> {
                                         child: Icon(Search.icon,
                                             color: whiteColor.value, size: 31),
                                       ),
-                                      const SizedBox(width: 140), //160),
+                                      const SizedBox(width: 85), //160),
                                       MyText(
                                           data: "Baby Care",
                                           font: englishFontBold,
@@ -202,7 +204,7 @@ class MainPageState extends State<MainPage> {
                                     : ([
                                         Column(
                                           children: [
-                                            const SizedBox(height: 35),
+                                            const SizedBox(height: 25),
                                             listButton('مشترياتي', ls.cart, () {
                                               Get.to(
                                                   () => const MyOrdersPage());
@@ -218,7 +220,7 @@ class MainPageState extends State<MainPage> {
                                                   const UserProfilePage());
                                             }),
                                             listButton('مركز المساعدة',
-                                                ls.call_center, () {}),
+                                                ls.call_center, () {FlutterPhoneDirectCaller.callNumber('07818115142');}),
                                             listButton('تسجيل الخروج', ls.out,
                                                 () {
                                               Get.to(() => const SignInPage());

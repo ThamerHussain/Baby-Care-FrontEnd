@@ -22,7 +22,7 @@ Expanded filtersAndItemsColumn() {
         SizedBox(
           width: double.maxFinite,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 0, 50, 25),
+            padding: const EdgeInsets.fromLTRB(0, 0, 40, 25),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               reverse: true,
@@ -59,8 +59,11 @@ Expanded filtersAndItemsColumn() {
                                 productInfoRow(
                                     product.values.elementAt(0),
                                     product.values.elementAt(1),
-                                    'assets/images/2.jpg',
-                                    product.values.elementAt(3)))
+                                    // 'assets/images/2.jpg',
+                                    product.values.elementAt(2),
+                                    product.values.elementAt(3),
+                                    product.values.elementAt(4),
+                                ))
                             .toList(),
               );
             }),

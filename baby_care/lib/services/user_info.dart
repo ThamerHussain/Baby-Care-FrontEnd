@@ -35,7 +35,7 @@ Padding userProfileRow(title, content) {
   // RxBool autofocus = false.obs;
 
   return Padding(
-    padding: const EdgeInsets.fromLTRB(35, 5, 35, 5),
+    padding: const EdgeInsets.fromLTRB(35, 5, 5, 5),
     child: Obx(() {
       return Row(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -81,7 +81,7 @@ Padding userProfileRow(title, content) {
 
               Obx(() {
                 return SizedBox(
-                  width: 250,
+                  width: 230,
                   child: TextField(
                     controller: controller,
                     textAlign: TextAlign.start,

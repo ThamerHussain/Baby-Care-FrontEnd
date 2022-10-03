@@ -52,7 +52,7 @@ class ImageProductProfile extends StatelessWidget {
     var width = size.width;
     return ClipRRect(
         borderRadius: BorderRadius.circular(15),
-        child: Image.asset(
+        child: Image.network(
           image,
           // width: 171,
           // height: 171,

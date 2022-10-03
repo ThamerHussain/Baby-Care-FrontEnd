@@ -13,6 +13,7 @@ class FavoritePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print(favoriteData);
     getFavorite();
     var size = MediaQuery.of(context).size;
     var height = size.height;
@@ -65,8 +66,11 @@ class FavoritePage extends StatelessWidget {
                             productInfoRow(
                         product.values.elementAt(0)['name'],
                       product.values.elementAt(0)['price'],
-                      'assets/images/2.jpg',
-                      product.values.elementAt(0)['stars']
+                      product.values.elementAt(0)['image_url'],
+                      // 'assets/images/2.jpg',
+                      product.values.elementAt(0)['stars'],
+                      product.values.elementAt(0)['description'],
+
                     ))
                         .toList(),
                   ),

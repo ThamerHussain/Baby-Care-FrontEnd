@@ -30,8 +30,20 @@ List<Map<dynamic, dynamic>> favoriteTProducts = [
     'product':{
     "name": "تيشيرت السنة الأولى",
     "price": "1,500",
-    "image": "/None/61ISiTmuyeL_1.png",
-    "stars": 5}
+    "image_url": "/static/4.jpg",
+    "stars": 5,
+      'description': 'description'}
+  },
+  ];
+
+List<Map<dynamic, dynamic>> cartProducts = [
+  {
+    'product':{
+    "name": "تيشيرت السنة الأولى",
+    "price": "1,500",
+    "image_url": "/static/4.jpg",
+    "stars": 5,
+      'description': 'description'}
   },
   ];
 
@@ -39,8 +51,9 @@ List<Map<dynamic, dynamic>> clothesProducts = [
   {
     "name": "تيشيرت السنة الأولى",
     "price": "20,000",
-    "image": "/None/61ISiTmuyeL_1.png",
-    "stars": 5
+    "image": "/static/4.jpg",
+    "stars": 5,
+    'description': 'description'
   },
 
 
@@ -278,8 +291,8 @@ List<Map<dynamic, dynamic>> doctors = [
 {
 "name": "د.فلان",
 "price": "أخصائي كذا",
-"image": "assets/images/1.jpg",
-"stars": 5
+"image": "/static/3.jpg",
+"cv": "cv"
 },
 //
 // {

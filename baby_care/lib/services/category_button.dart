@@ -13,75 +13,69 @@ RxInt selectedCategory = 1.obs;
 
 Obx categoryButton(text, int categoryNumber) {
   return Obx(() {
-    return TextButton(
-        style: ButtonStyle(
-          shape: MaterialStateProperty.all<BeveledRectangleBorder>(
-              BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              )),
-        ),
-        onPressed: (() {
-          selectedCategory.value = categoryNumber;
-          if (categoryNumber == 1) {
-            getSuggestedProducts();
-            // productsAndFilters[0] = suggestionsProducts;
-            // productsAndFilters[1] = null;
-            productsFilters.value = [];
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 13.0),
+      child: TextButton(
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all<BeveledRectangleBorder>(
+                BeveledRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )),
+          ),
+          onPressed: (() {
+            selectedCategory.value = categoryNumber;
+            if (categoryNumber == 1) {
+              getSuggestedProducts();
+              // productsAndFilters[0] = suggestionsProducts;
+              // productsAndFilters[1] = null;
+              productsFilters.value = [];
 
-          } else if (categoryNumber == 2) {
-            // productsAndFilters[0] = clothesProducts;
-            getClothesProducts();
-            // productsAndFilters[1] = clothesFilterData;
-            productsFilters.value = [clothesFilterData];
-          } else if (categoryNumber == 3) {
-            // productsAndFilters[0] = diapersProducts;
-            // productsAndFilters[1] = [clothesFilterData[1]];
-            // products.value = diapersProducts;
-            getDiaperProducts();
-            productsFilters.value = [[clothesFilterData[1]]];
+            } else if (categoryNumber == 2) {
+              // productsAndFilters[0] = clothesProducts;
+              getClothesProducts();
+              // productsAndFilters[1] = clothesFilterData;
+              productsFilters.value = [clothesFilterData];
+            } else if (categoryNumber == 3) {
+              // productsAndFilters[0] = diapersProducts;
+              // productsAndFilters[1] = [clothesFilterData[1]];
+              // products.value = diapersProducts;
+              getDiaperProducts();
+              productsFilters.value = [[clothesFilterData[1]]];
 
-          } else if (categoryNumber == 4) {
-            // productsAndFilters[0] = foodProducts;
-            getFoodProducts();
-            productsFilters.value = [foodFilterData];
-          } else if (categoryNumber == 5) {
-            // productsAndFilters[0] = foodToolProducts;
-            getFoodToolsProducts();
-            productsFilters.value = [foodToolFilterData];
-          } else if (categoryNumber == 6) {
-            // productsAndFilters[0] = showerToolProducts;
-            getShowerToolsProducts();
-            productsFilters.value = [showerToolFilterData];
-          } else if (categoryNumber == 7) {
-            // productsAndFilters[0] = shoesProducts;
-            getShoesProducts();
-            productsFilters.value = [[
-              clothesFilterData[1],
-              clothesFilterData[2]
-            ]];
-          } else if (categoryNumber == 8) {
-            // productsAndFilters[0] = vehiclesProducts;
-            getVehiclesProducts();
-            productsFilters.value = [vehicleFilterData];
-          } else if (categoryNumber == 9) {
-            // productsAndFilters[0] = containersProducts;
-            getContainersProducts();
-            productsFilters.value = [containerFilterData];
-          } else {
-            // productsAndFilters[0] = furnitureProducts;
-            getFurnitureProducts();
-            productsFilters.value = [furnitureFilterData];
-          }
-          // productsAndFilters.refresh();
-        }),
-        child: Container(
-          width: 100,
-          height: 27,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: selectedCategory.value == categoryNumber
-                  ? pointOEightWhiteColor.value
-                  : blackColor.value),
+            } else if (categoryNumber == 4) {
+              // productsAndFilters[0] = foodProducts;
+              getFoodProducts();
+              productsFilters.value = [foodFilterData];
+            } else if (categoryNumber == 5) {
+              // productsAndFilters[0] = foodToolProducts;
+              getFoodToolsProducts();
+              productsFilters.value = [foodToolFilterData];
+            } else if (categoryNumber == 6) {
+              // productsAndFilters[0] = showerToolProducts;
+              getShowerToolsProducts();
+              productsFilters.value = [showerToolFilterData];
+            } else if (categoryNumber == 7) {
+              // productsAndFilters[0] = shoesProducts;
+              getShoesProducts();
+              productsFilters.value = [[
+                clothesFilterData[1],
+                clothesFilterData[2]
+              ]];
+            } else if (categoryNumber == 8) {
+              // productsAndFilters[0] = vehiclesProducts;
+              getVehiclesProducts();
+              productsFilters.value = [vehicleFilterData];
+            } else if (categoryNumber == 9) {
+              // productsAndFilters[0] = containersProducts;
+              getContainersProducts();
+              productsFilters.value = [containerFilterData];
+            } else {
+              // productsAndFilters[0] = furnitureProducts;
+              getFurnitureProducts();
+              productsFilters.value = [furnitureFilterData];
+            }
+            // productsAndFilters.refresh();
+          }),
           child: Center(
               child: MyText(
                   data: text,
@@ -89,8 +83,8 @@ Obx categoryButton(text, int categoryNumber) {
                   size: 15,
                   color: selectedCategory.value == categoryNumber
                       ? whiteColor.value
-                      : halfWhiteColor.value)),
-        ));
+                      : halfWhiteColor.value))),
+    );
   });
 }
 

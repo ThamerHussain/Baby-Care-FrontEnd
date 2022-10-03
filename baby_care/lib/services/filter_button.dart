@@ -16,7 +16,7 @@ Padding filterButton(items) {
   Rx<Color> textColor = halfWhiteColor.value.obs;
 
   return Padding(
-      padding: const EdgeInsets.only(left: 55.0),
+      padding: const EdgeInsets.only(left: 35.0),
       child: Obx(
         () {
           return PopupMenuButton<String>(

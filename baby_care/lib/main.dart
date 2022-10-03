@@ -1,4 +1,5 @@
 import 'package:baby_care/pages/main_page.dart';
+import 'package:baby_care/pages/splash_page.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,8 +29,8 @@ class MyApp extends StatelessWidget {
           return Scaffold(
               backgroundColor: blackColor.value,
               body:
-                  // SplashPage()
-                  MainPage());
+                  const SplashPage());
+                  // MainPage());
         }));
   }
 }

@@ -17,8 +17,8 @@ Padding listButton(title, icon, function) {
         onPressed: (function),
         child: Obx(() {
           return Container(
-            width: 360,
-            height: 77,
+            width: 300,
+            height: 60,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
                 color: pointOEightWhiteColor.value),

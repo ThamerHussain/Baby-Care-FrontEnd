@@ -1,14 +1,19 @@
 import 'package:baby_care/services/requests.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get/get.dart';
 import '../pages/doctor_profile_page.dart';
 import 'used_fonts_and_colors.dart';
 import 'package:baby_care/icons/call_icons.dart';
 import 'my_text.dart';
 
-Padding doctorInfoRow(name, String specialty, imagePath) {
+Padding doctorInfoRow(name, String specialty, String imagePath, String cv) {
+
+  // print(imagePath);
+  imagePath = imagePath.replaceFirst('/static/', 'https://thamer.pythonanywhere.com/static/');
+  // print(imagePath);
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 30),
+    padding: const EdgeInsets.symmetric(horizontal: 10),
     child: SingleChildScrollView(
       child: Column(
         children: [
@@ -20,7 +25,7 @@ Padding doctorInfoRow(name, String specialty, imagePath) {
                 onTap: (() => Get.to(DoctorProfilePage(
                     doctorName: name,
                     doctorImage: imagePath,
-                    doctorSpeciality: specialty))),
+                    doctorSpeciality: specialty, description: cv))),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -33,7 +38,9 @@ Padding doctorInfoRow(name, String specialty, imagePath) {
                             borderRadius: BorderRadius.circular(10),
                           )),
                         ),
-                        onPressed: (() {}),
+                        onPressed: (() {
+                          FlutterPhoneDirectCaller.callNumber('07818115142');
+                        }),
                         child: Container(
                           width: 51,
                           height: 20,
@@ -69,17 +76,22 @@ Padding doctorInfoRow(name, String specialty, imagePath) {
                       ],
                     ),
                     const SizedBox(width: 15),
-                    SizedBox(
+                     SizedBox(
                       height: 64,
                       width: 64,
                       child: ClipRRect(
                           borderRadius:
                               const BorderRadius.all(Radius.circular(15)),
-                          child: Image.asset(
-                            imagePath,
+                          child:
+
+
+                          Image.network(imagePath,
                             width: 64,
                             height: 64,
-                          )),
+                          )
+            ),
+
+
                     ),
                   ],
                 ),
