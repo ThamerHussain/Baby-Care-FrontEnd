@@ -94,7 +94,7 @@ Padding orderInfoRow(title, String price, imagePath, description, int quantity_,
                 );}
                 ),
                 // const Spacer(),
-                Column(
+                Spacer(),Column(
                   
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
