@@ -13,9 +13,11 @@ class DoctorProfilePage extends StatefulWidget {
       {super.key,
       required this.doctorName,
       required this.doctorImage,
-      required this.doctorSpeciality, required this.cv});
+      required this.doctorSpeciality,
+      required this.description
+      });
 
-  final String doctorName, doctorImage, doctorSpeciality,cv;
+  final String doctorName, doctorImage, doctorSpeciality, description;
 
   @override
   State<DoctorProfilePage> createState() => _DoctorProfilePageState();
@@ -73,7 +75,7 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                       ],
                     ),
                   ),
-                   SizedBox(height: 40),
+                  const SizedBox(height: 20),//20),
                   DoctorInfoRow(
                       doctorName: widget.doctorName,
                       doctorSpeciality: widget.doctorSpeciality,
@@ -81,9 +83,9 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                   Expanded(
                       child: SingleChildScrollView(
                           child: DescriptionContainer(
-                              title: "السيرة الذاتية", text: widget.cv))),
+                              title: "السيرة الذاتية", text: widget.description))),
                   Padding(
-                    padding: const EdgeInsets.only(top: 20),
+                    padding: const EdgeInsets.only(top: Checkbox.width*0.02),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -92,10 +94,10 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                           child: MyText(
                               data: 'أوقات دوام العيادة',
                               font: arabicFont400,
-                              size: 25,
+                              size: width*0.06,
                               color: whiteColor.value),
                         ),
-                         SizedBox(height: 10),
+                        SizedBox(height: width*0.005),//20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -130,7 +132,7 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                     ),
                   ),
                   Padding(
-                      padding: const EdgeInsets.only(bottom: 20),
+                      padding: const EdgeInsets.only(bottom: 1),
                       child: TextButton(
                           style: ButtonStyle(
                             shape: MaterialStateProperty.all<

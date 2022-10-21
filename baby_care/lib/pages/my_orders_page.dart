@@ -2,15 +2,19 @@ import 'package:baby_care/pages/sign_in_page.dart';
 import 'package:baby_care/services/order_info_row.dart';
 import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/services/products_data.dart';
+import 'package:baby_care/services/requests.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get/get.dart';
+
+final RxList<Map<dynamic, dynamic>> cartData = cartProducts.obs;
 
 class MyOrdersPage extends StatelessWidget {
   const MyOrdersPage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    getCart();
     var size = MediaQuery.of(context).size;
     var height = size.height;
     var width = size.width;
@@ -55,12 +59,17 @@ class MyOrdersPage extends StatelessWidget {
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
-                  children: myOrdersData
-                      .map((List<String> product) => orderinfoRow(
-                          title: product[0].toString(),
-                          price: product[1].toString(),
-                          image: product[2].toString(),
-                          discrption:product[3].toString(),))
+                  children: cartData
+                      .map<Padding>((Map<dynamic, dynamic> product) =>
+                          orderInfoRow(
+                              product.values.elementAt(0)['name'],
+                              product.values.elementAt(0)['price'],
+                              product.values.elementAt(0)['image_url'],
+                              product.values.elementAt(0)['description'],
+                              // 'assets/images/2.jpg',
+                              product['item_qty'],
+                            context
+                          ))
                       .toList(),
                 ),
               ),
@@ -75,9 +84,12 @@ class MyOrdersPage extends StatelessWidget {
                   )),
                 ),
                 onPressed: (() {
-                  Get.off(const SignInPage());
+                  // Get.off(const SignInPage());
+                  FlutterPhoneDirectCaller.callNumber('07818115142');
                 }),
                 child: Container(
+                  // width: 320,
+                  // height: 55,
                   width: width * 0.88,
                   height: height * 0.07,
                   decoration: BoxDecoration(

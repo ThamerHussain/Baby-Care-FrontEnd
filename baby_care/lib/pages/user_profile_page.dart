@@ -59,14 +59,16 @@ class UserProfilePage extends StatelessWidget {
                 children: [
                   Center(
                     child: Container(
-                      height: width*0.93,
-                      width: width,
+                      // height: 350,
+                      // width: 350,
+                      height: width*0.9,
+                      width: width*0.98,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),
                         color: userProfileCardColor.value,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(top: 80),
+                        padding: const EdgeInsets.only(top: Checkbox.width*3, right: Checkbox.width),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
@@ -76,7 +78,7 @@ class UserProfilePage extends StatelessWidget {
                               height: 20,
                               thickness: 1,
                               indent: 35,
-                              endIndent: 35,
+                              endIndent: 5,
                             ),
                             userProfileRow('رقم الهاتف', '07818115142'),
                             Divider(
@@ -84,7 +86,7 @@ class UserProfilePage extends StatelessWidget {
                               height: 20,
                               thickness: 1,
                               indent: 35,
-                              endIndent: 35,
+                              endIndent: 5,
                             ),
                             userProfileRow('المحافظة', 'البصرة')
                           ],
@@ -98,14 +100,17 @@ class UserProfilePage extends StatelessWidget {
                     right: 0,
                     child: Center(
                       child: Container(
-                        width: width*0.31,
-                        height: height*0.15,
+                        // width: 120,
+                        // height: 120,
+                        width: width * 0.31,
+                        height: width * 0.31,
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(60),
                           ),
                           image: DecorationImage(
-                            image: AssetImage('assets/images/2.jpg'),
+                            image: AssetImage('assets/images/'
+                                '2.jpg'),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -115,7 +120,7 @@ class UserProfilePage extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 100),
+                padding: const EdgeInsets.only(top: 15),
                 child: TextButton(
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<BeveledRectangleBorder>(
@@ -127,8 +132,10 @@ class UserProfilePage extends StatelessWidget {
                     Get.off(const SignInPage());
                   }),
                   child: Container(
-                    width: width*0.9,
-                    height: width*0.14,
+                    // width: 320,
+                    // height: 55,
+                    width: width * 0.9,
+                    height: width * 0.14,
                     decoration: BoxDecoration(
                         color: blueColor,
                         borderRadius: BorderRadius.circular(20)),

@@ -48,16 +48,17 @@ class ImageProductProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     var size = MediaQuery.of(context).size;
     var height = size.height;
     var width = size.width;
     return ClipRRect(
         borderRadius: BorderRadius.circular(15),
-        child: Image.asset(
+        child: Image.network(
           image,
-          width:width*0.43 ,
-          height:width*0.45,
+          // width: 171,
+          // height: 171,
+          width: width * 0.42 ,
+          height: width * 0.44,
         ));
   }
 }

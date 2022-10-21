@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'my_text.dart';
 
-Padding listButton(title, icon, function) {
+Padding listButton(title, icon, function,context) {
+  var size = MediaQuery.of(context).size;
+  var height = size.height;
+  var width = size.width;
   return Padding(
+    // padding: const EdgeInsets.only(bottom: 20.0),
     padding: const EdgeInsets.only(bottom: 5.0),
     child: TextButton(
         style: ButtonStyle(
@@ -16,8 +20,8 @@ Padding listButton(title, icon, function) {
         onPressed: (function),
         child: Obx(() {
           return Container(
-            width: 360,
-            height: 77,
+            width:width*0.95,
+            height: height*0.1,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
                 color: pointOEightWhiteColor.value),

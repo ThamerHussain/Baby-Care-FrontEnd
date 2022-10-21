@@ -50,7 +50,7 @@ class _DoctorInfoRowState extends State<DoctorInfoRow> {
                                   child: Text(widget.doctorName,
                                       style: TextStyle(
                                           color: pointEightFiveWhiteColor.value,
-                                          fontSize: 24,
+                                          fontSize: 20,
                                           fontFamily: arabicFont700),
                                       textAlign: TextAlign.end),
                                 ),
@@ -60,16 +60,16 @@ class _DoctorInfoRowState extends State<DoctorInfoRow> {
                             MyText(
                                 data: widget.doctorSpeciality,
                                 font: arabicFont400,
-                                size: 20,
+                                size: 15,
                                 color: pointEightFiveWhiteColor.value),
-                            const SizedBox(height: 10),
+                            const SizedBox(height: 3),
                             Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   MyText(
                                       data: "غير متوفر لليوم",
                                       font: arabicFont400,
-                                      size: 20,
+                                      size: 15,
                                       color: pointEightFiveWhiteColor.value),
                                 ] //const [MyStar(size: 23)],
                                 )
@@ -80,7 +80,7 @@ class _DoctorInfoRowState extends State<DoctorInfoRow> {
                   )
                 ]),
           ),
-          const SizedBox(width: 20),
+          SizedBox(width: width*0.01),
           ImageProductProfile(image: widget.doctorImage)
         ],
       ),

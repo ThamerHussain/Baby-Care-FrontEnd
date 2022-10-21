@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'main_page.dart';
 
+RxList<Map<dynamic, dynamic>> dataItemsForSearch = clothesProducts.obs;
+
 class SearchPage extends StatelessWidget {
   SearchPage({Key? key}) : super(key: key);
 
@@ -33,27 +35,28 @@ class SearchPage extends StatelessWidget {
                                           : 'البحث عن المفروشات'.obs
       : 'البحث عن الأطباء'.obs;
 
-  final RxList<List<String>> dataItemsForSearch = isProductPage.value
-      ? selectedCategory.value == 1
-          ? suggestionsProducts.obs
-          : selectedCategory.value == 2
-              ? clothesProducts.obs
-              : selectedCategory.value == 3
-                  ? diapersProducts.obs
-                  : selectedCategory.value == 4
-                      ? foodProducts.obs
-                      : selectedCategory.value == 5
-                          ? foodToolProducts.obs
-                          : selectedCategory.value == 6
-                              ? showerToolProducts.obs
-                              : selectedCategory.value == 7
-                                  ? shoesProducts.obs
-                                  : selectedCategory.value == 8
-                                      ? vehiclesProducts.obs
-                                      : selectedCategory.value == 9
-                                          ? containersProducts.obs
-                                          : furnitureProducts.obs
-      : doctors.obs;
+
+  // isProductPage.value
+  //     ? selectedCategory.value == 1
+  //         ? suggestionsProducts.obs
+  //         : selectedCategory.value == 2
+  //             ? clothesProducts.obs
+  //             : selectedCategory.value == 3
+  //                 ? diapersProducts.obs
+  //                 : selectedCategory.value == 4
+  //                     ? foodProducts.obs
+  //                     : selectedCategory.value == 5
+  //                         ? foodToolProducts.obs
+  //                         : selectedCategory.value == 6
+  //                             ? showerToolProducts.obs
+  //                             : selectedCategory.value == 7
+  //                                 ? shoesProducts.obs
+  //                                 : selectedCategory.value == 8
+  //                                     ? vehiclesProducts.obs
+  //                                     : selectedCategory.value == 9
+  //                                         ? containersProducts.obs
+  //                                         : furnitureProducts.obs
+  //     : doctors.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -128,19 +131,29 @@ class SearchPage extends StatelessWidget {
                                       ? [
                                           for (var product
                                               in dataItemsForSearch.value)
-                                            if (product[0].contains(
+                                            if (product.values.elementAt(0).contains(
                                                 searchString.value)) ...[
-                                              productInfoRow(product[0],
-                                                  product[1], product[2],product[3]),
+                                              productInfoRow(
+
+                          product.values.elementAt(0),
+                          product.values.elementAt(1),
+                          product.values.elementAt(2),
+                          // 'assets/images/2.jpg',
+                          product.values.elementAt(3),
+                          product.values.elementAt(4),
+
+
+
+                                              ),
                                             ]
                                         ]
                                       : [
                                           for (var doctor
                                               in dataItemsForSearch.value)
-                                            if (doctor[0].contains(
+                                            if (doctor.values.elementAt(0).contains(
                                                 searchString.value)) ...[
-                                              doctorInfoRow(doctor[0],
-                                                  doctor[1], doctor[2],doctor[3]),
+                                              doctorInfoRow(doctor.values.elementAt(0),
+                                                  doctor.values.elementAt(1), doctor.values.elementAt(2), doctor.values.elementAt(3)),
                                             ]
                                         ]
                                   : []);

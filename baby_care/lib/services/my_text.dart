@@ -15,7 +15,8 @@ class MyText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(data,textDirection:TextDirection.rtl,
+    return Text(data,
+        textDirection: TextDirection.rtl,
         style: TextStyle(
             height: 1.2,
             fontSize: size,

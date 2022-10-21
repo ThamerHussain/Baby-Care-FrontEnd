@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:baby_care/pages/main_page.dart';
+import 'package:baby_care/pages/sign_in_page.dart';
 import 'package:baby_care/pages/sign_up_page.dart';
 import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/services/splash_icons.dart';
@@ -20,7 +22,7 @@ class _SplashPageState extends State<SplashPage> {
     Timer(
         const Duration(seconds: 3),
         (() => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: ((context) => const SignUpPage())))));
+            MaterialPageRoute(builder: ((context) => MainPage())))));//const SignInPage())))));
   }
 
   @override

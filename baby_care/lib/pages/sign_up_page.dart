@@ -1,3 +1,4 @@
+import 'package:baby_care/pages/main_page.dart';
 import 'package:baby_care/pages/sign_in_page.dart';
 import 'package:baby_care/services/my_text.dart';
 import 'package:baby_care/services/used_fonts_and_colors.dart';
@@ -119,15 +120,16 @@ class _SignUpPageState extends State<SignUpPage> {
                               ),
                               onPressed: (() {
                                 if (fromKey.currentState!.validate()) {
-                                  AuthService.signUp(
-                                      email: emailController.text,
-                                      password: passwordController.text,
-                                      firstName: nameController.text,
-                                      lastName: familyNameController.text);
+                                  // AuthService.signUp(
+                                  //     email: emailController.text,
+                                  //     password: passwordController.text,
+                                  //     firstName: nameController.text,
+                                  //     lastName: familyNameController.text);
                                   // emailController.clear();
                                   // passwordController.clear();
                                   // nameController.clear();
                                   // familyNameController.clear();
+                                  Get.off(MainPage());
                                 }
                               }),
                               child: Container(

@@ -1,3 +1,4 @@
+import 'package:baby_care/pages/main_page.dart';
 import 'package:baby_care/pages/sign_up_page.dart';
 import 'package:baby_care/services/text_field.dart';
 import 'package:baby_care/services/my_text.dart';
@@ -121,11 +122,12 @@ class _SignInPageState extends State<SignInPage> {
                               ),
                               onPressed: (() async {
                                 if (fromKey.currentState!.validate()) {
-                                  AuthService.signIn(
-                                      email: signInEmailController.text,
-                                      password: signInPasswordController.text);
+                                  // AuthService.signIn(
+                                  //     email: signInEmailController.text,
+                                  //     password: signInPasswordController.text);
                                   // signInEmailController.clear();
                                   // signInPasswordController.clear();
+                                  Get.off(MainPage());
                                 }
                               }),
                               child: Container(

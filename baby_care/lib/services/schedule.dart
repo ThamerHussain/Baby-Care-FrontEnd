@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Schedule extends StatelessWidget {
+
   const Schedule({
     super.key,
     required this.day,
@@ -14,21 +15,24 @@ class Schedule extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
     return SizedBox(
-      height: 60,
-      width: 120,
+      height: height*0.09,
+      width: width*0.29,
       child: Obx(() {
         return Column(
           children: [
             MyText(
                 data: day,
                 font: arabicFont400,
-                size: 20,
+                size: width*0.045,
                 color: pointEightFiveWhiteColor.value),
             MyText(
                 data: time,
                 font: arabicFont400,
-                size: 15,
+                size: width*0.042,
                 color: pointEightFiveWhiteColor.value)
           ],
         );

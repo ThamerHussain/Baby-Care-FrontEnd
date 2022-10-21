@@ -1,13 +1,17 @@
 import 'package:baby_care/pages/product_profile_page.dart';
+import 'package:baby_care/services/requests.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'used_fonts_and_colors.dart';
 import 'my_text.dart';
 
-Padding productInfoRow(title, String price, imagePath,discrption) {
+Padding productInfoRow(title, String price, imagePath, int stars, description) {
+
+  // print('$title, String $price, $imagePath, int $stars');
+  imagePath = imagePath.replaceFirst('/static/', 'https://thamer.pythonanywhere.com/static/');
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 30),
+    padding: const EdgeInsets.symmetric(horizontal: 10),
     child: Column(children: [
       Obx(() {
         return Material(
@@ -15,12 +19,14 @@ Padding productInfoRow(title, String price, imagePath,discrption) {
           child: InkWell(
             splashColor: grayColor,
             onTap: (() {
-              Get.to(ProductProfile(
+              // getProduct(id: 1);
+
+              Get.to(
+
+                  ProductProfile(
                   productTitle: title,
                   productImage: imagePath,
-                  productPrice: price,
-                  discrption: discrption
-                ,));
+                  productPrice: price, stars: stars, description: description));
             }),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,7 +39,8 @@ Padding productInfoRow(title, String price, imagePath,discrption) {
                         borderRadius: BorderRadius.circular(10),
                       )),
                     ),
-                    onPressed: (() {}),
+                    onPressed: (() =>
+                      addToCart(title)),
                     child: Container(
                       width: 51,
                       height: 20,
@@ -66,14 +73,17 @@ Padding productInfoRow(title, String price, imagePath,discrption) {
                       ],
                     ),
                     RatingBar.builder(
-                      initialRating: 3,
+                      initialRating: stars.toDouble(),
                       minRating: 1,
                       direction: Axis.horizontal,
-                      allowHalfRating: true,
+                      allowHalfRating: false,
                       itemCount: 5,
                       itemSize: 20,
+                      textDirection: TextDirection.rtl,
+                      ignoreGestures: true,
                       itemPadding: const EdgeInsets.symmetric(horizontal: 0.0),
                       itemBuilder: (context, _) => Icon(
+
                         Icons.star_rounded,
                         color: pointEightFiveWhiteColor.value,
                       ),
@@ -90,10 +100,12 @@ Padding productInfoRow(title, String price, imagePath,discrption) {
                   width: 64,
                   child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
-                      child: Image.asset(
+                      child: Image.network(
                         imagePath,
-                        width: 60,
-                        height: 60,
+                        width: 64,
+                        height: 64,
+                        // width: 60,
+                        // height: 60,
                       )),
                 ),
               ],
